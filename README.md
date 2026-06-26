@@ -1,4 +1,4 @@
-# KHAJANA RAJU — DevOps Engineer
+# Puneeth Aradhya — DevOps Engineer (10+ years)
 
 Personal website showcasing my skills, experience, and certifications, with an embedded AI assistant that answers only about me using a private knowledge base.
 
