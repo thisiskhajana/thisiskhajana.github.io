@@ -134,6 +134,147 @@
         transform: scale(1.05) !important;
         box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
     }
+
+    /* Custom Loader Styles */
+    .sonar-loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0f0f23 0%, #1a0f2e 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        animation: fadeOut 0.6s ease-out 2.4s forwards;
+    }
+
+    @keyframes fadeOut {
+        to { opacity: 0; visibility: hidden; }
+    }
+
+    .sonar-loader-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .loader-brand .brand-circle {
+        width: 80px;
+        height: 80px;
+        border: 2px solid rgba(59, 130, 246, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: bold;
+        background: rgba(59, 130, 246, 0.1);
+        animation: rotateIn 0.8s ease-out;
+    }
+
+    @keyframes rotateIn {
+        from { transform: rotate(-180deg); opacity: 0; }
+        to { transform: rotate(0); opacity: 1; }
+    }
+
+    .loader-dots {
+        display: flex;
+        gap: 8px;
+        animation: fadeInUp 0.8s ease-out 0.3s backwards;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(59, 130, 246, 0.8);
+        animation: bounce 1.4s ease-in-out infinite;
+        animation-delay: var(--delay);
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .loader-text-content {
+        animation: fadeInUp 0.8s ease-out 0.6s backwards;
+    }
+
+    .loader-name {
+        font-size: 28px;
+        color: #fff;
+        margin: 0 0 8px 0;
+        font-family: "FK Grotesk Neue Medium", system-ui;
+    }
+
+    .loader-subtitle {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 0 4px 0;
+    }
+
+    .loader-message {
+        font-size: 12px;
+        color: rgba(59, 130, 246, 0.8);
+        margin: 0 0 16px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .modern-progress {
+        width: 200px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+        margin-top: 16px;
+    }
+
+    .progress-track {
+        height: 100%;
+        position: relative;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        border-radius: 2px;
+        animation: progress 2.5s ease-in-out forwards;
+    }
+
+    @keyframes progress {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+
+    .loader-tech-tags {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: fadeInUp 0.8s ease-out 0.9s backwards;
+    }
+
+    .tech-tag-small {
+        font-size: 11px;
+        padding: 4px 10px;
+        border: 1px solid rgba(59, 130, 246, 0.5);
+        border-radius: 12px;
+        color: rgba(59, 130, 246, 0.8);
+        background: rgba(59, 130, 246, 0.05);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 </style>
 
 
@@ -159,7 +300,7 @@
     <!-- End Google Tag Manager (noscript) -->
 </head>
 <body class="sonar-body">
-    <!-- Exact preloader from ref/preloader.html -->
+    <!-- Loader -->
     <div class="sonar-loader-wrapper">
         <div class="sonar-loader-container">
             <!-- Animated Logo/Brand -->
@@ -332,7 +473,7 @@
             <div class="about-content">
                 <div class="about-main">                    <div class="profile-card">
                         <div class="profile-image-container">
-                            <img src="Photo.jpg" alt="Khajana Raju Yandapalli" class="profile-image" loading="lazy">
+                            <img src="photo.png" alt="Khajana Raju Yandapalli" class="profile-image" loading="lazy">
                         </div>
 
                         <div class="profile-info">
@@ -349,10 +490,10 @@
                                 <a href="mailto:rajusw804@gmail.com" class="social-link">
                                     <i class="fas fa-envelope"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/khajana-raju" target="_blank" class="social-link">
+                                <a href="https://www.linkedin.com/in/khajanaraju/" target="_blank" class="social-link">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://github.com/khajana-raju" target="_blank" class="social-link">
+                                <a href="https://github.com/thisiskhajana/thisiskhajana.github.io" target="_blank" class="social-link">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -421,7 +562,7 @@
                     <span>Technical Expertise</span>
                 </div>          
                 <p class="section-subtitle font-light">
-                    10+ years of DevOps experience across industry knowledge<br>
+                    Extensive DevOps experience across industry knowledge<br>
                     and cutting-edge tools & technologies.
                 </p>
             </div>
@@ -1386,7 +1527,7 @@
                 <div class="experience-card">
                     <div class="experience-header">
                         <div class="company-icon">
-                            <img src="https://www.factset.com/themes/custom/factset/logo.svg" alt="FactSet logo" class="company-logo" width="48" height="48" loading="lazy">
+                            <div class="company-initials" style="background: linear-gradient(135deg, #0066ff, #0099ff); font-size: 24px; font-weight: bold; color: white;">FS</div>
                         </div>
                         <div class="experience-info">
                             <h3>Lead DevOps Engineer</h3>
@@ -1466,7 +1607,7 @@
                 <div class="experience-card">
                     <div class="experience-header">
                         <div class="company-icon">
-                            <img src="https://via.placeholder.com/48" alt="Futurism Technologies logo" class="company-logo" width="48" height="48" loading="lazy">
+                            <div class="company-initials" style="background: linear-gradient(135deg, #7b3ff2, #9d5bff); font-size: 24px; font-weight: bold; color: white;">FT</div>
                         </div>
                         <div class="experience-info">
                             <h3>DevOps Engineer</h3>
@@ -1634,11 +1775,15 @@
                     </div>
                     <div class="cert-content">
                         <h3>AWS Certified Solutions Architect – Associate</h3>
-                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-issuer">Amazon Web Services (AWS)</p>
                         <div class="cert-details">
                             <span class="cert-date">
                                 <i class="fas fa-calendar"></i>
-                                Validation Number: J3409H5CF24Q1PK1
+                                Issued: Aug 2020
+                            </span>
+                            <span class="cert-expiry">
+                                <i class="fas fa-calendar-times"></i>
+                                Expires: Aug 2023
                             </span>
                         </div>
                         <div class="cert-skills">
@@ -1647,59 +1792,56 @@
                     </div>
                 </div>
 
-                <!-- Placeholder for additional certifications user may add -->
+                <!-- Claude 101 Certificate -->
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-icon kubernetes">
-                            <i class="fas fa-dharmachakra"></i>
+                        <div class="cert-icon anthropic">
+                            <span style="font-size: 20px; font-weight: bold;">A</span>
                         </div>
-                        <div class="cert-badge">
-                            <span>Expertise</span>
+                        <div class="cert-badge verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified</span>
                         </div>
                     </div>
                     <div class="cert-content">
-                        <h3>Kubernetes & Container Orchestration</h3>
-                        <p class="cert-issuer">Hands-on Experience</p>
-                        <div class="cert-skills">
-                            <strong>Skills:</strong> EKS, Docker, Helm, kubelet, kubectl
+                        <h3>Certificate of Completion: Claude 101</h3>
+                        <p class="cert-issuer">Anthropic</p>
+                        <div class="cert-details">
+                            <span class="cert-date">
+                                <i class="fas fa-calendar"></i>
+                                Issued: Jun 2026
+                            </span>
+                            <span class="cert-id">
+                                <i class="fas fa-key"></i>
+                                Credential ID: fdbteb3czb2r
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Placeholder for additional certifications -->
+                <!-- Introduction to Model Context Protocol -->
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-icon terraform">
-                            <i class="fas fa-layer-group"></i>
+                        <div class="cert-icon anthropic">
+                            <span style="font-size: 20px; font-weight: bold;">A</span>
                         </div>
-                        <div class="cert-badge">
-                            <span>Expert Level</span>
+                        <div class="cert-badge verified">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified</span>
                         </div>
                     </div>
                     <div class="cert-content">
-                        <h3>Terraform & Infrastructure as Code</h3>
-                        <p class="cert-issuer">Production Experience</p>
-                        <div class="cert-skills">
-                            <strong>Skills:</strong> Terraform, CloudFormation, state management, modules
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CI/CD Expertise -->
-                <div class="certification-card">
-                    <div class="cert-header">
-                        <div class="cert-icon jenkins">
-                            <i class="fas fa-hammer"></i>
-                        </div>
-                        <div class="cert-badge">
-                            <span>Expert Level</span>
-                        </div>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Jenkins & CI/CD Pipeline Automation</h3>
-                        <p class="cert-issuer">Enterprise Implementation</p>
-                        <div class="cert-skills">
-                            <strong>Skills:</strong> Jenkins administration, Groovy scripts, pipeline as code, distributed builds
+                        <h3>Introduction to Model Context Protocol</h3>
+                        <p class="cert-issuer">Anthropic</p>
+                        <div class="cert-details">
+                            <span class="cert-date">
+                                <i class="fas fa-calendar"></i>
+                                Issued: Jun 2026
+                            </span>
+                            <span class="cert-id">
+                                <i class="fas fa-key"></i>
+                                Credential ID: rgiddadbrati
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -1795,7 +1937,7 @@
                     </div>
                     <div class="contact-content">
                         <h3>LinkedIn</h3>
-                        <a href="https://www.linkedin.com/in/khajana-raju" target="_blank" class="contact-action">
+                        <a href="https://www.linkedin.com/in/khajanaraju/" target="_blank" class="contact-action">
                             <i class="fab fa-linkedin-in"></i>
                             <span>Connect on LinkedIn</span>
                         </a>
@@ -1834,10 +1976,10 @@
                     <a href="mailto:rajusw804@gmail.com" target="_blank">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/khajana-raju" target="_blank">
+                    <a href="https://www.linkedin.com/in/khajanaraju/" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/khajana-raju" target="_blank" rel="noopener">
+                    <a href="https://github.com/thisiskhajana/thisiskhajana.github.io" target="_blank" rel="noopener">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
