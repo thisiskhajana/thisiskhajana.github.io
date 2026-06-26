@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is DevOps? - Khajana Raju Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f0f23;
+            --secondary-bg: #1a0f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #bfdbfe;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-primary);
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+        }
+
+        .blog-post-nav {
+            background: rgba(15, 15, 35, 0.95);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px 0;
+        }
+
+        .blog-post-nav-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-post-nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .blog-post-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .blog-post-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .blog-post-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .blog-post-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .blog-post-content h2 {
+            color: var(--text-primary);
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content h3 {
+            color: var(--accent-blue);
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+
+        .back-btn:hover {
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-content">
+            <a href="../index.html">← Back to Portfolio</a>
+            <a href="../blog.html">← Back to Blog</a>
+        </div>
+    </div>
+
+    <!-- Blog Post -->
+    <div class="blog-post-container">
+        <a href="../blog.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-post-header">
+            <h1>What is DevOps?</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-calendar"></i> June 2026</span>
+                <span><i class="fas fa-user"></i> Khajana Raju</span>
+                <span><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+        </div>
+
+        <div class="blog-post-content">
+            <p>DevOps is a set of practices, tools, and a cultural philosophy that emphasizes collaboration between software development and IT operations teams. The term "DevOps" is a combination of "development" and "operations," representing the breaking down of silos between these traditionally separate departments.</p>
+
+            <h2>The Core Philosophy</h2>
+            <p>DevOps is not just about tools or automation—it's a mindset shift. It's about:</p>
+            <ul>
+                <li>Fostering collaboration between development and operations teams</li>
+                <li>Automating repetitive tasks to increase efficiency</li>
+                <li>Enabling continuous delivery of software</li>
+                <li>Taking responsibility for the entire software lifecycle</li>
+                <li>Learning from failures and improving continuously</li>
+            </ul>
+
+            <h2>Key DevOps Principles</h2>
+
+            <h3>1. Continuous Integration (CI)</h3>
+            <p>Developers integrate their code into a shared repository multiple times a day. Automated tests run to ensure code quality and compatibility.</p>
+
+            <h3>2. Continuous Delivery (CD)</h3>
+            <p>Code is continuously prepared for production release. Automated pipelines test, build, and package code ready for deployment.</p>
+
+            <h3>3. Infrastructure as Code (IaC)</h3>
+            <p>Infrastructure is managed through code rather than manual configuration. This ensures consistency, version control, and reproducibility.</p>
+
+            <h3>4. Monitoring & Observability</h3>
+            <p>Continuous monitoring of applications and infrastructure helps teams detect issues quickly and respond proactively.</p>
+
+            <h3>5. Culture of Collaboration</h3>
+            <p>Breaking down silos between teams, shared ownership, and collective responsibility for outcomes.</p>
+
+            <h2>DevOps Benefits</h2>
+            <ul>
+                <li><strong>Faster Time to Market:</strong> Automate deployments and reduce manual errors</li>
+                <li><strong>Improved Reliability:</strong> Continuous testing catches bugs early</li>
+                <li><strong>Better Collaboration:</strong> Teams work together more effectively</li>
+                <li><strong>Cost Efficiency:</strong> Automation reduces operational overhead</li>
+                <li><strong>Scalability:</strong> Infrastructure can scale dynamically</li>
+                <li><strong>Security:</strong> Security practices integrated throughout the pipeline</li>
+            </ul>
+
+            <h2>Essential DevOps Tools</h2>
+            <ul>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+                <li><strong>CI/CD:</strong> Jenkins, GitLab CI, GitHub Actions</li>
+                <li><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Ansible</li>
+                <li><strong>Containerization:</strong> Docker, Kubernetes</li>
+                <li><strong>Monitoring:</strong> Prometheus, Grafana, DataDog</li>
+                <li><strong>Logging:</strong> ELK Stack, Splunk</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>DevOps represents a fundamental shift in how software is developed, deployed, and maintained. By fostering collaboration, automating processes, and embracing continuous improvement, organizations can deliver better software faster and more reliably. Whether you're a developer, operations engineer, or manager, understanding and implementing DevOps practices is crucial for success in today's digital landscape.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

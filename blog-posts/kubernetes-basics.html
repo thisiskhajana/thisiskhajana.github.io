@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Basics - Khajana Raju Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f0f23;
+            --secondary-bg: #1a0f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #bfdbfe;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-primary);
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+        }
+
+        .blog-post-nav {
+            background: rgba(15, 15, 35, 0.95);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px 0;
+        }
+
+        .blog-post-nav-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-post-nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .blog-post-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .blog-post-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .blog-post-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .blog-post-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .blog-post-content h2 {
+            color: var(--text-primary);
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content h3 {
+            color: var(--accent-blue);
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+
+        .back-btn:hover {
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-content">
+            <a href="../index.html">← Back to Portfolio</a>
+            <a href="../blog.html">← Back to Blog</a>
+        </div>
+    </div>
+
+    <!-- Blog Post -->
+    <div class="blog-post-container">
+        <a href="../blog.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-post-header">
+            <h1>Kubernetes Basics</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-calendar"></i> June 2026</span>
+                <span><i class="fas fa-user"></i> Khajana Raju</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+        </div>
+
+        <div class="blog-post-content">
+            <p>Kubernetes has become the industry standard for container orchestration. It automates the deployment, scaling, and management of containerized applications. If you're working with containers, understanding Kubernetes is crucial for modern DevOps practices.</p>
+
+            <h2>What is Kubernetes?</h2>
+            <p>Kubernetes (often abbreviated as K8s) is an open-source container orchestration platform. It automates many of the manual processes involved in deploying, managing, and scaling containerized applications across a cluster of machines.</p>
+
+            <h2>Why Kubernetes?</h2>
+            <ul>
+                <li><strong>Automated Deployment:</strong> Deploy containers across your cluster efficiently</li>
+                <li><strong>Self-Healing:</strong> Automatically restart or replace containers that fail</li>
+                <li><strong>Load Balancing:</strong> Distribute traffic across containers</li>
+                <li><strong>Automatic Scaling:</strong> Scale applications based on demand</li>
+                <li><strong>Rolling Updates:</strong> Update applications without downtime</li>
+                <li><strong>Resource Management:</strong> Optimize resource allocation</li>
+            </ul>
+
+            <h2>Kubernetes Architecture</h2>
+
+            <h3>Control Plane (Master)</h3>
+            <p>Manages the Kubernetes cluster and makes decisions about the cluster. Components include:</p>
+            <ul>
+                <li><strong>API Server:</strong> Exposes the Kubernetes API</li>
+                <li><strong>Scheduler:</strong> Assigns pods to nodes</li>
+                <li><strong>Controller Manager:</strong> Runs controller processes</li>
+                <li><strong>etcd:</strong> Key-value store for cluster data</li>
+            </ul>
+
+            <h3>Worker Nodes</h3>
+            <p>Run containerized applications. Components include:</p>
+            <ul>
+                <li><strong>Kubelet:</strong> Ensures containers run in a pod</li>
+                <li><strong>Container Runtime:</strong> Runs containers (Docker, containerd)</li>
+                <li><strong>kube-proxy:</strong> Network proxy for communication</li>
+            </ul>
+
+            <h2>Key Concepts</h2>
+
+            <h3>Pod</h3>
+            <p>The smallest deployable unit in Kubernetes. Usually contains one container, but can contain multiple tightly-coupled containers.</p>
+
+            <h3>Deployment</h3>
+            <p>Describes desired state for pods and replicas. Manages rolling updates and rollbacks.</p>
+
+            <h3>Service</h3>
+            <p>Exposes pods to network traffic and other pods. Provides load balancing and service discovery.</p>
+
+            <h3>Namespace</h3>
+            <p>Virtual cluster for resource isolation. Helps organize and manage multi-tenant environments.</p>
+
+            <h3>ConfigMap & Secret</h3>
+            <p>Store configuration data and sensitive information separately from container images.</p>
+
+            <h2>Basic Kubernetes Commands</h2>
+            <ul>
+                <li><code>kubectl create deployment myapp --image=myimage</code> - Create a deployment</li>
+                <li><code>kubectl expose deployment myapp --port=8080</code> - Expose a deployment</li>
+                <li><code>kubectl scale deployment myapp --replicas=3</code> - Scale replicas</li>
+                <li><code>kubectl get pods</code> - List all pods</li>
+                <li><code>kubectl logs pod-name</code> - View pod logs</li>
+            </ul>
+
+            <h2>Kubernetes Benefits</h2>
+            <ul>
+                <li>Container orchestration at scale</li>
+                <li>High availability and fault tolerance</li>
+                <li>Easy deployment and rollback</li>
+                <li>Resource optimization</li>
+                <li>Microservices support</li>
+                <li>Active community and ecosystem</li>
+            </ul>
+
+            <h2>Challenges</h2>
+            <ul>
+                <li>Steep learning curve</li>
+                <li>Complex configuration</li>
+                <li>Resource overhead</li>
+                <li>Operational complexity</li>
+                <li>Requires expertise to optimize</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Kubernetes is a powerful tool for managing containerized applications at scale. While it has a learning curve, mastering Kubernetes is essential for modern DevOps engineers. Start with the basics, practice with small clusters, and gradually explore advanced features like Helm, operators, and custom resource definitions.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

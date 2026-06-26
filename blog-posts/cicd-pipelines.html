@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Pipelines Explained - Khajana Raju Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f0f23;
+            --secondary-bg: #1a0f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #bfdbfe;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-primary);
+            font-family: "Inter", system-us, -apple-system, sans-serif;
+        }
+
+        .blog-post-nav { background: rgba(15, 15, 35, 0.95); border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 20px 0; }
+        .blog-post-nav-content { max-width: 800px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; }
+        .blog-post-nav a { color: var(--accent-blue); text-decoration: none; }
+        .blog-post-container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        .blog-post-header { margin-bottom: 40px; text-align: center; }
+        .blog-post-header h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+        .blog-post-meta { display: flex; gap: 20px; justify-content: center; color: var(--text-secondary); font-size: 14px; }
+        .blog-post-content { line-height: 1.8; font-size: 16px; color: var(--text-secondary); }
+        .blog-post-content h2 { color: var(--text-primary); font-size: 28px; margin-top: 40px; margin-bottom: 20px; }
+        .blog-post-content h3 { color: var(--accent-blue); font-size: 22px; margin-top: 30px; margin-bottom: 15px; }
+        .blog-post-content p { margin-bottom: 15px; }
+        .blog-post-content ul { margin-bottom: 20px; padding-left: 25px; }
+        .blog-post-content li { margin-bottom: 10px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-blue); text-decoration: none; margin-bottom: 30px; }
+        .back-btn:hover { gap: 12px; }
+    </style>
+</head>
+<body>
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-content">
+            <a href="../index.html">← Back to Portfolio</a>
+            <a href="../blog.html">← Back to Blog</a>
+        </div>
+    </div>
+
+    <div class="blog-post-container">
+        <a href="../blog.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-post-header">
+            <h1>CI/CD Pipelines Explained</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-calendar"></i> June 2026</span>
+                <span><i class="fas fa-user"></i> Khajana Raju</span>
+                <span><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+        </div>
+
+        <div class="blog-post-content">
+            <p>CI/CD is one of the most important practices in modern software development. It enables teams to deliver high-quality software faster and more reliably. Let's explore how CI/CD pipelines work and why they're essential.</p>
+
+            <h2>What is CI/CD?</h2>
+            <p><strong>Continuous Integration (CI)</strong> is the practice of frequently integrating code changes into a shared repository, with automated testing.</p>
+            <p><strong>Continuous Delivery (CD)</strong> ensures code is always ready for production release, while <strong>Continuous Deployment</strong> automatically deploys code to production.</p>
+
+            <h2>The CI/CD Pipeline Process</h2>
+
+            <h3>1. Code Commit</h3>
+            <p>Developer commits code to a repository (Git, GitHub, etc.). This triggers the pipeline.</p>
+
+            <h3>2. Build</h3>
+            <p>Automated build process compiles code, manages dependencies, and creates artifacts.</p>
+
+            <h3>3. Test</h3>
+            <p>Automated tests run (unit tests, integration tests, etc.) to catch bugs early.</p>
+
+            <h3>4. Code Quality</h3>
+            <p>Static analysis tools check code quality, security, and compliance.</p>
+
+            <h3>5. Deploy to Staging</h3>
+            <p>Code is deployed to a staging environment for further testing.</p>
+
+            <h3>6. Approval & Deploy</h3>
+            <p>Manual or automatic deployment to production.</p>
+
+            <h2>Popular CI/CD Tools</h2>
+            <ul>
+                <li><strong>Jenkins:</strong> Open-source automation server</li>
+                <li><strong>GitHub Actions:</strong> Native CI/CD in GitHub</li>
+                <li><strong>GitLab CI:</strong> Built-in CI/CD for GitLab</li>
+                <li><strong>CircleCI:</strong> Cloud-based CI/CD</li>
+                <li><strong>Travis CI:</strong> Hosted continuous integration</li>
+            </ul>
+
+            <h2>Benefits of CI/CD</h2>
+            <ul>
+                <li>Faster software releases</li>
+                <li>Early bug detection</li>
+                <li>Reduced manual errors</li>
+                <li>Improved code quality</li>
+                <li>Better team collaboration</li>
+                <li>Easy rollback capability</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li>Commit code frequently (multiple times per day)</li>
+                <li>Automated testing is mandatory</li>
+                <li>Keep builds fast (under 10 minutes)</li>
+                <li>Monitor pipeline metrics</li>
+                <li>Use version control for all configurations</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>CI/CD is not optional in modern development. Implementing a robust CI/CD pipeline reduces risk, improves quality, and enables teams to deliver features faster. Start with CI, then add CD as your team matures.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khajana Raju | DevOps & Cloud Blog</title>
+    <meta name="description" content="Blog about DevOps, Cloud Computing, Kubernetes, and Infrastructure Engineering">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f0f23;
+            --secondary-bg: #1a0f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #bfdbfe;
+            --accent-blue: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-primary);
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .blog-nav {
+            background: rgba(15, 15, 35, 0.95);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .blog-nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .blog-nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .blog-nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Header */
+        .blog-header {
+            max-width: 1200px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        /* Blog Grid */
+        .blog-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: rgba(26, 15, 46, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-blue), #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+
+        .blog-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .blog-card-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: rgba(191, 219, 254, 0.7);
+            padding-top: 15px;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .blog-card-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .blog-card-link:hover {
+            gap: 12px;
+        }
+
+        /* Footer */
+        .blog-footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            margin-top: 60px;
+        }
+
+        .blog-footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 32px;
+            }
+
+            .blog-nav-links {
+                gap: 15px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="blog-nav">
+        <div class="blog-nav-content">
+            <a href="index.html" class="blog-logo">KR</a>
+            <div class="blog-nav-links">
+                <a href="index.html">Portfolio</a>
+                <a href="blog.html" style="color: #3b82f6;">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="blog-header">
+        <h1>DevOps & Cloud Engineering Blog</h1>
+        <p>Insights on cloud infrastructure, Kubernetes, CI/CD, and modern DevOps practices</p>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Blog Post 1: What is DevOps -->
+            <div class="blog-card">
+                <div class="blog-card-image">🚀</div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">DevOps</span>
+                    <h3 class="blog-card-title">What is DevOps?</h3>
+                    <p class="blog-card-excerpt">
+                        Learn the fundamentals of DevOps, how it bridges development and operations, and why it's essential for modern software delivery...
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>June 2026</span>
+                        <span>5 min read</span>
+                    </div>
+                    <a href="blog-posts/devops-basics.html" class="blog-card-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2: Cloud Computing -->
+            <div class="blog-card">
+                <div class="blog-card-image">☁️</div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Cloud</span>
+                    <h3 class="blog-card-title">Cloud Computing 101</h3>
+                    <p class="blog-card-excerpt">
+                        Explore the basics of cloud computing, compare AWS, Azure, and GCP, and understand why cloud is transforming IT...
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>June 2026</span>
+                        <span>7 min read</span>
+                    </div>
+                    <a href="blog-posts/cloud-computing.html" class="blog-card-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3: Kubernetes -->
+            <div class="blog-card">
+                <div class="blog-card-image">⚙️</div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Kubernetes</span>
+                    <h3 class="blog-card-title">Kubernetes Basics</h3>
+                    <p class="blog-card-excerpt">
+                        Understand container orchestration, Kubernetes architecture, and how to deploy applications at scale...
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>June 2026</span>
+                        <span>8 min read</span>
+                    </div>
+                    <a href="blog-posts/kubernetes-basics.html" class="blog-card-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 4: CI/CD Pipelines -->
+            <div class="blog-card">
+                <div class="blog-card-image">🔄</div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">CI/CD</span>
+                    <h3 class="blog-card-title">CI/CD Pipelines Explained</h3>
+                    <p class="blog-card-excerpt">
+                        Learn how to automate your deployment process using CI/CD pipelines with Jenkins, GitHub Actions, and more...
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>June 2026</span>
+                        <span>6 min read</span>
+                    </div>
+                    <a href="blog-posts/cicd-pipelines.html" class="blog-card-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 5: Infrastructure as Code -->
+            <div class="blog-card">
+                <div class="blog-card-image">📝</div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Infrastructure</span>
+                    <h3 class="blog-card-title">Infrastructure as Code with Terraform</h3>
+                    <p class="blog-card-excerpt">
+                        Discover how to manage your infrastructure through code using Terraform, CloudFormation, and other IaC tools...
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>June 2026</span>
+                        <span>7 min read</span>
+                    </div>
+                    <a href="blog-posts/infrastructure-as-code.html" class="blog-card-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Blog Post 6: Docker Containers -->
+            <div class="blog-card">
+                <div class="blog-card-image">🐳</div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Docker</span>
+                    <h3 class="blog-card-title">Docker & Containerization</h3>
+                    <p class="blog-card-excerpt">
+                        Learn containerization basics, Docker fundamentals, and how containers revolutionized application deployment...
+                    </p>
+                    <div class="blog-card-meta">
+                        <span>June 2026</span>
+                        <span>6 min read</span>
+                    </div>
+                    <a href="blog-posts/docker-basics.html" class="blog-card-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="blog-footer">
+        <p>© 2026 Khajana Raju Yandapalli | <a href="index.html">Back to Portfolio</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

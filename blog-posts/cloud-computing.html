@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing 101 - Khajana Raju Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0f0f23;
+            --secondary-bg: #1a0f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #bfdbfe;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-primary);
+            font-family: "Inter", system-ui, -apple-system, sans-serif;
+        }
+
+        .blog-post-nav {
+            background: rgba(15, 15, 35, 0.95);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px 0;
+        }
+
+        .blog-post-nav-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-post-nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .blog-post-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .blog-post-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .blog-post-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .blog-post-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .blog-post-content h2 {
+            color: var(--text-primary);
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content h3 {
+            color: var(--accent-blue);
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+
+        .back-btn:hover {
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-content">
+            <a href="../index.html">← Back to Portfolio</a>
+            <a href="../blog.html">← Back to Blog</a>
+        </div>
+    </div>
+
+    <!-- Blog Post -->
+    <div class="blog-post-container">
+        <a href="../blog.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-post-header">
+            <h1>Cloud Computing 101</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-calendar"></i> June 2026</span>
+                <span><i class="fas fa-user"></i> Khajana Raju</span>
+                <span><i class="fas fa-clock"></i> 7 min read</span>
+            </div>
+        </div>
+
+        <div class="blog-post-content">
+            <p>Cloud computing has revolutionized how organizations manage and scale their IT infrastructure. Instead of maintaining physical servers, companies can now leverage cloud services to access computing resources on-demand. Let's explore the fundamentals of cloud computing and understand why it's become essential for modern businesses.</p>
+
+            <h2>What is Cloud Computing?</h2>
+            <p>Cloud computing is the delivery of computing resources—including servers, storage, databases, networking, software, and more—over the internet ("the cloud"). Instead of owning and maintaining physical infrastructure, users can access these resources from anywhere, paying only for what they use.</p>
+
+            <h2>Key Characteristics</h2>
+            <ul>
+                <li><strong>On-Demand Self-Service:</strong> Access resources instantly without manual intervention</li>
+                <li><strong>Broad Network Access:</strong> Access from any device with internet connectivity</li>
+                <li><strong>Resource Pooling:</strong> Multiple users share infrastructure efficiently</li>
+                <li><strong>Rapid Elasticity:</strong> Scale resources up or down based on demand</li>
+                <li><strong>Measured Service:</strong> Pay only for the resources you use</li>
+            </ul>
+
+            <h2>Cloud Service Models</h2>
+
+            <h3>1. Infrastructure as a Service (IaaS)</h3>
+            <p>Provides virtualized computing resources over the internet. You manage applications and data; the cloud provider manages infrastructure.</p>
+            <p><strong>Examples:</strong> AWS EC2, Microsoft Azure VMs, Google Compute Engine</p>
+
+            <h3>2. Platform as a Service (PaaS)</h3>
+            <p>Provides a platform for building, testing, and deploying applications. You focus on application development; the provider manages infrastructure and middleware.</p>
+            <p><strong>Examples:</strong> Heroku, AWS Lambda, Google App Engine</p>
+
+            <h3>3. Software as a Service (SaaS)</h3>
+            <p>Delivers applications over the internet. You simply use the application; the provider manages everything.</p>
+            <p><strong>Examples:</strong> Salesforce, Microsoft Office 365, Google Workspace</p>
+
+            <h2>Cloud Deployment Models</h2>
+
+            <h3>Public Cloud</h3>
+            <p>Resources are owned and operated by third-party cloud providers and shared with the public. Cost-effective and scalable.</p>
+            <p><strong>Providers:</strong> AWS, Azure, Google Cloud Platform</p>
+
+            <h3>Private Cloud</h3>
+            <p>Infrastructure is operated solely for a single organization. More control and security but higher costs.</p>
+
+            <h3>Hybrid Cloud</h3>
+            <p>Combines public and private clouds, allowing data and applications to move between them. Best of both worlds.</p>
+
+            <h2>Major Cloud Providers</h2>
+
+            <h3>Amazon Web Services (AWS)</h3>
+            <p>Market leader with the broadest range of services. Services include EC2, S3, RDS, Lambda, and hundreds more.</p>
+
+            <h3>Microsoft Azure</h3>
+            <p>Strong enterprise focus with excellent integration with Microsoft products. Great for hybrid cloud scenarios.</p>
+
+            <h3>Google Cloud Platform (GCP)</h3>
+            <p>Known for data analytics, machine learning, and Kubernetes expertise. Growing market share.</p>
+
+            <h2>Benefits of Cloud Computing</h2>
+            <ul>
+                <li><strong>Cost Efficiency:</strong> Pay only for what you use; no capital investment in hardware</li>
+                <li><strong>Scalability:</strong> Scale resources instantly as your business grows</li>
+                <li><strong>Reliability:</strong> High availability and redundancy across multiple regions</li>
+                <li><strong>Security:</strong> Enterprise-grade security managed by cloud providers</li>
+                <li><strong>Performance:</strong> Global infrastructure for low latency</li>
+                <li><strong>Flexibility:</strong> Work from anywhere with internet access</li>
+            </ul>
+
+            <h2>Cloud Computing Challenges</h2>
+            <ul>
+                <li>Learning curve for new technologies</li>
+                <li>Vendor lock-in concerns</li>
+                <li>Data privacy and compliance requirements</li>
+                <li>Cost management and optimization</li>
+                <li>Integration with existing on-premise systems</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Cloud computing is no longer optional—it's a necessity for modern organizations. Whether you're a startup looking to minimize infrastructure costs or an enterprise seeking global scalability, cloud solutions offer flexibility and power. Understanding cloud fundamentals is essential for anyone working in IT, development, or operations today.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

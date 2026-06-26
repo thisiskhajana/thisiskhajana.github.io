@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker & Containerization - Khajana Raju Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary-bg: #0f0f23; --secondary-bg: #1a0f2e; --text-primary: #ffffff; --text-secondary: #bfdbfe; --accent-blue: #3b82f6; }
+        body { background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg)); color: var(--text-primary); font-family: "Inter", system-ui, -apple-system, sans-serif; }
+        .blog-post-nav { background: rgba(15, 15, 35, 0.95); border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 20px 0; }
+        .blog-post-nav-content { max-width: 800px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; }
+        .blog-post-nav a { color: var(--accent-blue); text-decoration: none; }
+        .blog-post-container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        .blog-post-header { margin-bottom: 40px; text-align: center; }
+        .blog-post-header h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+        .blog-post-meta { display: flex; gap: 20px; justify-content: center; color: var(--text-secondary); font-size: 14px; }
+        .blog-post-content { line-height: 1.8; font-size: 16px; color: var(--text-secondary); }
+        .blog-post-content h2 { color: var(--text-primary); font-size: 28px; margin-top: 40px; margin-bottom: 20px; }
+        .blog-post-content h3 { color: var(--accent-blue); font-size: 22px; margin-top: 30px; margin-bottom: 15px; }
+        .blog-post-content p { margin-bottom: 15px; }
+        .blog-post-content ul { margin-bottom: 20px; padding-left: 25px; }
+        .blog-post-content li { margin-bottom: 10px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-blue); text-decoration: none; margin-bottom: 30px; }
+        .back-btn:hover { gap: 12px; }
+    </style>
+</head>
+<body>
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-content">
+            <a href="../index.html">← Back to Portfolio</a>
+            <a href="../blog.html">← Back to Blog</a>
+        </div>
+    </div>
+
+    <div class="blog-post-container">
+        <a href="../blog.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-post-header">
+            <h1>Docker & Containerization</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-calendar"></i> June 2026</span>
+                <span><i class="fas fa-user"></i> Khajana Raju</span>
+                <span><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+        </div>
+
+        <div class="blog-post-content">
+            <p>Docker has revolutionized application deployment by introducing containerization. Containers offer a lightweight, portable, and consistent way to package and run applications across different environments.</p>
+
+            <h2>What is Docker?</h2>
+            <p>Docker is a containerization platform that packages applications and their dependencies into standardized units called containers. Containers are lightweight, isolated, and portable across different systems.</p>
+
+            <h2>Containers vs Virtual Machines</h2>
+
+            <h3>Virtual Machines</h3>
+            <ul>
+                <li>Include entire OS (heavier, slower)</li>
+                <li>More isolation</li>
+                <li>Higher resource overhead</li>
+                <li>Takes minutes to start</li>
+            </ul>
+
+            <h3>Containers</h3>
+            <ul>
+                <li>Share host OS kernel (lightweight, fast)</li>
+                <li>Process-level isolation</li>
+                <li>Lower resource overhead</li>
+                <li>Starts in milliseconds</li>
+            </ul>
+
+            <h2>Docker Architecture</h2>
+
+            <h3>Docker Engine</h3>
+            <p>Core component that builds and runs containers. Includes:</p>
+            <ul>
+                <li><strong>Docker Daemon:</strong> Manages containers</li>
+                <li><strong>Docker CLI:</strong> Command-line interface</li>
+                <li><strong>Docker Registry:</strong> Repository for images</li>
+            </ul>
+
+            <h2>Key Concepts</h2>
+
+            <h3>Image</h3>
+            <p>A lightweight, standalone, executable package containing application code, libraries, and dependencies.</p>
+
+            <h3>Container</h3>
+            <p>A runtime instance of an image. Multiple containers can run from the same image.</p>
+
+            <h3>Dockerfile</h3>
+            <p>Text file containing instructions to build a Docker image.</p>
+
+            <h3>Docker Hub</h3>
+            <p>Public registry containing pre-built images.</p>
+
+            <h2>Docker Commands</h2>
+            <ul>
+                <li><code>docker build -t myapp .</code> - Build an image</li>
+                <li><code>docker run -d myapp</code> - Run a container</li>
+                <li><code>docker ps</code> - List running containers</li>
+                <li><code>docker logs container-id</code> - View container logs</li>
+                <li><code>docker stop container-id</code> - Stop a container</li>
+            </ul>
+
+            <h2>Benefits of Docker</h2>
+            <ul>
+                <li><strong>Consistency:</strong> Same behavior across environments</li>
+                <li><strong>Portability:</strong> Run anywhere (laptop, server, cloud)</li>
+                <li><strong>Efficiency:</strong> Lightweight compared to VMs</li>
+                <li><strong>Scalability:</strong> Easy to spin up new instances</li>
+                <li><strong>Isolation:</strong> Secure process isolation</li>
+                <li><strong>DevOps:</strong> Streamlines development and deployment</li>
+            </ul>
+
+            <h2>Docker Best Practices</h2>
+            <ul>
+                <li>Use official base images</li>
+                <li>Minimize image layers</li>
+                <li>Don't run as root user</li>
+                <li>Use .dockerignore files</li>
+                <li>Tag images appropriately</li>
+                <li>Use health checks</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Docker is fundamental to modern DevOps and microservices. Understanding containerization and Docker is essential for any developer or DevOps engineer. Start by building simple images, then progress to multi-container applications using Docker Compose or Kubernetes.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
