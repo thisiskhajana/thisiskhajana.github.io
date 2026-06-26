@@ -331,7 +331,10 @@
 
     .loader-subtitle {
         font-size: 14px;
-        color: #94a3b8;
+        background: linear-gradient(90deg, #94a3b8 0%, #06b6d4 50%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         margin: 0 0 4px 0;
         font-weight: 500;
         transition: opacity 0.5s ease-in-out;
@@ -414,7 +417,7 @@
 
     .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #2563eb 0%, #06b6d4 50%, #8b5cf6 100%);
+        background: linear-gradient(90deg, #3b82f6 0%, #2563eb 25%, #06b6d4 50%, #8b5cf6 75%, #3b82f6 100%);
         background-size: 200% 100%;
         border-radius: 4px;
         animation: progress 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards, shimmer 1.5s ease-in-out infinite;
@@ -466,6 +469,43 @@
         white-space: nowrap;
     }
 
+    .loading-stages {
+        margin: 12px 0;
+    }
+
+    .stage {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #64748b;
+        margin: 4px 0;
+        transition: color 0.3s ease;
+    }
+
+    .stage.active {
+        color: #06b6d4;
+    }
+
+    .stage.active span {
+        background: linear-gradient(90deg, #3b82f6, #06b6d4, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .stage-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #64748b;
+    }
+
+    .stage.active .stage-dot {
+        background: #06b6d4;
+        box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+    }
+
     @media (max-width: 480px) {
         .tech-tag-small {
             font-size: 9px;
@@ -499,6 +539,61 @@
             font-size: 18px;
             min-width: 50px;
             letter-spacing: 0.5px;
+        }
+    }
+
+    .floating-tech-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+
+    .tech-icon {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        transform: translate(-50%, -50%);
+        font-size: 32px;
+        color: #06b6d4;
+        opacity: 0;
+        animation: floatIcon 0.8s ease-out forwards, floatPulse 2s ease-in-out infinite;
+        animation-delay: var(--delay);
+    }
+
+    @keyframes floatIcon {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.6);
+        }
+        to {
+            opacity: 0.6;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    @keyframes floatPulse {
+        0%, 100% {
+            opacity: 0.6;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .tech-icon {
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .tech-icon {
+            font-size: 24px;
         }
     }
 </style>
@@ -583,35 +678,20 @@
 
             <!-- Floating DevOps Icons -->
             <div class="floating-tech-icons">
-                <div class="tech-icon" style="--delay: 0s; --x: 12%; --y: 20%">
+                <div class="tech-icon" style="--delay: 0s; --x: 22%; --y: 18%">
                     <i class="fa-brands fa-docker"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 0.5s; --x: 88%; --y: 20%">
+                <div class="tech-icon" style="--delay: 0.4s; --x: 78%; --y: 18%">
                     <i class="fa-solid fa-dharmachakra"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 1s; --x: 8%; --y: 65%">
+                <div class="tech-icon" style="--delay: 0.8s; --x: 12%; --y: 48%">
                     <i class="fa-brands fa-aws"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 1.5s; --x: 92%; --y: 65%">
-                    <i class="fa-brands fa-microsoft"></i>
+                <div class="tech-icon" style="--delay: 1.2s; --x: 88%; --y: 48%">
+                    <i class="fa-brands fa-git-alt"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 2s; --x: 50%; --y: 75%">
+                <div class="tech-icon" style="--delay: 1.6s; --x: 50%; --y: 62%">
                     <i class="fa-solid fa-cloud"></i>
-                </div>
-                <div class="tech-icon" style="--delay: 2.5s; --x: 20%; --y: 42%">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <div class="tech-icon" style="--delay: 3s; --x: 80%; --y: 42%">
-                    <i class="fa-solid fa-shield-alt"></i>
-                </div>
-                <div class="tech-icon" style="--delay: 3.5s; --x: 30%; --y: 12%">
-                    <i class="fa-solid fa-circle-notch"></i>
-                </div>
-                <div class="tech-icon" style="--delay: 4s; --x: 70%; --y: 12%">
-                    <i class="fa-solid fa-cube"></i>
-                </div>
-                <div class="tech-icon" style="--delay: 4.5s; --x: 50%; --y: 35%">
-                    <i class="fa-solid fa-gears"></i>
                 </div>
             </div>
         </div>
