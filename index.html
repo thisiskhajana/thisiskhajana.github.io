@@ -25,10 +25,8 @@
     <link rel="preload" href="./req/fonts/FKGroteskNeue-Light.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./req/fonts/FKGroteskNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./req/fonts/FKGroteskNeue-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link  rel="shortcut icon" href="req/img/fav/redketchup/favicon.ico">
-    <link  rel="shortcut icon" href="req/img/fav/redketchup/android-chrome-192x192.png">
-    <link rel="shortcut icon" href="req/img/fav/redketchup/android-chrome-512x512.png">
-    <link rel="shortcut icon" href="req/img/fav/redketchup/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%233b82f6' width='192' height='192'/><text x='50%' y='50%' font-family='system-ui,-apple-system,sans-serif' font-size='90' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>KR</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%233b82f6' width='192' height='192'/><text x='50%' y='50%' font-family='system-ui,-apple-system,sans-serif' font-size='90' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>KR</text></svg>">
     <script src="req/js/styles.js"></script>
 <style>
     html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
@@ -142,13 +140,14 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(-45deg, #0a0a15, #1a0f2e, #2d1b4e, #1a0f2e);
+        background: linear-gradient(135deg, #080305 0%, #12070f 15%, #1a0f1f 30%, #251825 50%, #1a0f1f 70%, #12070f 85%, #080305 100%);
         background-size: 400% 400%;
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 9999;
         animation: gradientShift 8s ease infinite, fadeOut 0.8s ease-out 4.5s forwards;
+        backdrop-filter: blur(0.5px);
     }
 
     @keyframes fadeOut {
@@ -166,26 +165,64 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 50px;
-        padding: 40px;
+        justify-content: center;
+        gap: 25px;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .sonar-loader-container {
+            gap: 18px;
+            padding: 15px;
+            padding-bottom: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .sonar-loader-container {
+            gap: 15px;
+            padding: 12px;
+        }
     }
 
     .loader-brand .brand-circle {
         width: 110px;
         height: 110px;
-        border: 2px solid rgba(96, 165, 250, 0.7);
+        border: 3px solid;
+        border-image: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6, #3b82f6) 1;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 44px;
         font-weight: 800;
-        color: #60a5fa;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05));
+        color: #06b6d4;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(6, 78, 111, 0.1) 50%, rgba(15, 23, 42, 0.7) 100%);
         position: relative;
         animation: scaleIn 0.8s ease-out, pulse 2s ease-in-out infinite 0.8s;
-        box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.1);
-        text-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+        box-shadow: none;
+        text-shadow: none;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+        .loader-brand .brand-circle {
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .loader-brand .brand-circle {
+            width: 85px;
+            height: 85px;
+            font-size: 36px;
+        }
     }
 
     .loader-brand .brand-circle::before {
@@ -195,9 +232,10 @@
         left: -4px;
         right: -4px;
         bottom: -4px;
-        border: 2px solid transparent;
-        border-top-color: rgba(139, 92, 246, 0.8);
-        border-right-color: rgba(59, 130, 246, 0.4);
+        border: 2.5px solid transparent;
+        border-top-color: #06b6d4;
+        border-right-color: #8b5cf6;
+        border-bottom-color: #3b82f6;
         border-radius: 50%;
         animation: rotateBorder 3s linear infinite;
     }
@@ -230,13 +268,13 @@
     }
 
     @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), inset 0 0 30px rgba(59, 130, 246, 0.1); }
-        50% { box-shadow: 0 0 50px rgba(59, 130, 246, 0.5), inset 0 0 40px rgba(59, 130, 246, 0.2); }
+        0%, 100% { box-shadow: none; }
+        50% { box-shadow: none; }
     }
 
     .loader-dots {
         display: flex;
-        gap: 8px;
+        gap: 6px;
         animation: fadeInUp 0.8s ease-out 0.3s backwards;
     }
 
@@ -244,7 +282,8 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: rgba(59, 130, 246, 0.8);
+        background: #06b6d4;
+        box-shadow: none;
         animation: bounce 1.4s ease-in-out infinite;
         animation-delay: var(--delay);
     }
@@ -264,59 +303,122 @@
     }
 
     .loader-name {
-        font-size: 36px;
-        color: #60a5fa;
-        margin: 0 0 12px 0;
+        font-size: 32px;
+        background: linear-gradient(90deg, #3b82f6, #06b6d4, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0 0 6px 0;
         font-family: "FK Grotesk Neue Medium", system-ui;
         font-weight: 700;
-        text-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
-        letter-spacing: 1px;
+        text-shadow: none;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+        .loader-name {
+            font-size: 28px;
+            margin: 0 0 8px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .loader-name {
+            font-size: 24px;
+            margin: 0 0 6px 0;
+        }
     }
 
     .loader-subtitle {
-        font-size: 17px;
-        color: #bfdbfe;
-        margin: 0 0 6px 0;
+        font-size: 14px;
+        color: #94a3b8;
+        margin: 0 0 4px 0;
         font-weight: 500;
         transition: opacity 0.5s ease-in-out;
-        min-height: 24px;
-        text-shadow: 0 0 10px rgba(96, 165, 250, 0.2);
+        min-height: 20px;
+        text-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+        .loader-subtitle {
+            font-size: 15px;
+            margin: 0 0 4px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .loader-subtitle {
+            font-size: 13px;
+            margin: 0 0 4px 0;
+        }
     }
 
     .loader-message {
-        font-size: 12px;
-        color: rgba(59, 130, 246, 0.9);
-        margin: 0 0 20px 0;
+        font-size: 11px;
+        color: #06b6d4;
+        margin: 0 0 12px 0;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+        .loader-message {
+            font-size: 11px;
+            margin: 0 0 15px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .loader-message {
+            font-size: 10px;
+            margin: 0 0 12px 0;
+        }
     }
 
     .modern-progress {
         width: 100%;
-        max-width: 400px;
-        margin-top: 24px;
+        max-width: 350px;
+        margin-top: 15px;
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+        .modern-progress {
+            max-width: 100%;
+            margin-top: 12px;
+            gap: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .modern-progress {
+            max-width: 100%;
+            margin-top: 10px;
+            gap: 8px;
+        }
     }
 
     .progress-track {
         flex: 1;
         height: 6px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 3px;
+        background: rgba(59, 130, 246, 0.2);
+        border-radius: 4px;
         overflow: hidden;
         position: relative;
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+        box-shadow: none;
     }
 
     .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #3b82f6, #2563eb, #1d4ed8);
+        background: linear-gradient(90deg, #2563eb 0%, #06b6d4 50%, #8b5cf6 100%);
         background-size: 200% 100%;
-        border-radius: 3px;
+        border-radius: 4px;
         animation: progress 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards, shimmer 1.5s ease-in-out infinite;
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), inset 0 0 10px rgba(59, 130, 246, 0.2);
+        box-shadow: none;
         width: 0%;
     }
 
@@ -332,31 +434,72 @@
 
     .loader-tech-tags {
         display: flex;
-        gap: 12px;
+        gap: 8px;
         flex-wrap: wrap;
         justify-content: center;
         animation: fadeInUp 0.8s ease-out 0.9s backwards;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+        .loader-tech-tags {
+            gap: 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .loader-tech-tags {
+            gap: 4px;
+        }
     }
 
     .tech-tag-small {
         font-size: 11px;
         padding: 4px 10px;
-        border: 1px solid rgba(59, 130, 246, 0.5);
+        border: 1.5px solid #06b6d4;
         border-radius: 12px;
-        color: rgba(59, 130, 246, 0.8);
-        background: rgba(59, 130, 246, 0.05);
+        color: #06b6d4;
+        background: rgba(6, 182, 212, 0.15);
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+        .tech-tag-small {
+            font-size: 9px;
+            padding: 3px 8px;
+        }
     }
 
     .progress-percentage {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 800;
-        color: #3b82f6;
-        text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-        min-width: 80px;
+        background: linear-gradient(90deg, #3b82f6, #06b6d4, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        min-width: 70px;
         text-align: center;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+        .progress-percentage {
+            font-size: 20px;
+            min-width: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .progress-percentage {
+            font-size: 18px;
+            min-width: 50px;
+            letter-spacing: 0.5px;
+        }
     }
 </style>
 
@@ -440,26 +583,35 @@
 
             <!-- Floating DevOps Icons -->
             <div class="floating-tech-icons">
-                <div class="tech-icon" style="--delay: 0s; --x: 15%; --y: 25%">
+                <div class="tech-icon" style="--delay: 0s; --x: 12%; --y: 20%">
                     <i class="fa-brands fa-docker"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 0.5s; --x: 85%; --y: 25%">
+                <div class="tech-icon" style="--delay: 0.5s; --x: 88%; --y: 20%">
                     <i class="fa-solid fa-dharmachakra"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 1s; --x: 10%; --y: 70%">
+                <div class="tech-icon" style="--delay: 1s; --x: 8%; --y: 65%">
                     <i class="fa-brands fa-aws"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 1.5s; --x: 90%; --y: 70%">
+                <div class="tech-icon" style="--delay: 1.5s; --x: 92%; --y: 65%">
                     <i class="fa-brands fa-microsoft"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 2s; --x: 50%; --y: 80%">
+                <div class="tech-icon" style="--delay: 2s; --x: 50%; --y: 75%">
                     <i class="fa-solid fa-cloud"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 2.5s; --x: 25%; --y: 45%">
+                <div class="tech-icon" style="--delay: 2.5s; --x: 20%; --y: 42%">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
-                <div class="tech-icon" style="--delay: 3s; --x: 75%; --y: 45%">
+                <div class="tech-icon" style="--delay: 3s; --x: 80%; --y: 42%">
                     <i class="fa-solid fa-shield-alt"></i>
+                </div>
+                <div class="tech-icon" style="--delay: 3.5s; --x: 30%; --y: 12%">
+                    <i class="fa-solid fa-circle-notch"></i>
+                </div>
+                <div class="tech-icon" style="--delay: 4s; --x: 70%; --y: 12%">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <div class="tech-icon" style="--delay: 4.5s; --x: 50%; --y: 35%">
+                    <i class="fa-solid fa-gears"></i>
                 </div>
             </div>
         </div>
