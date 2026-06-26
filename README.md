@@ -1,4 +1,4 @@
-# KHAJANA RAJU — DevOps EngineeR
+# KHAJANA RAJU — DevOps Engineer
 
 Personal website showcasing my skills, experience, and certifications, with an embedded AI assistant that answers only about me using a private knowledge base.
 
