@@ -606,6 +606,43 @@
             font-size: 24px;
         }
     }
+
+    .visitor-counter {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: rgba(251, 191, 36, 0.1);
+        border: 1.5px solid #fbbf24;
+        border-radius: 24px;
+        font-size: 14px;
+        color: #fbbf24;
+        animation: fadeInUp 0.8s ease-out 2.5s backwards;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .visitor-counter i {
+        font-size: 16px;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @media (max-width: 768px) {
+        .visitor-counter {
+            font-size: 13px;
+            padding: 10px 16px;
+            margin-top: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .visitor-counter {
+            font-size: 12px;
+            padding: 8px 14px;
+            margin-top: 12px;
+        }
+    }
 </style>
 
 
@@ -683,6 +720,12 @@
                         <div class="progress-fill"></div>
                     </div>
                     <span class="progress-percentage" id="progressPercent">0%</span>
+                </div>
+
+                <!-- Visitor Counter -->
+                <div class="visitor-counter">
+                    <i class="fa-solid fa-eye"></i>
+                    <span id="visitorCount">Loading...</span>
                 </div>
             </div>
 
@@ -2084,6 +2127,27 @@
     </div>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="req/js/material-3.js"></script>
     <script src="req/js/chatbot-fix.js"></script>
+
+    <!-- Visitor Counter Script -->
+    <script>
+    // Visitor Counter using CountAPI
+    (function() {
+        const visitorCount = document.getElementById('visitorCount');
+        const apiUrl = 'https://api.countapi.xyz/hit/aradhyapuneeth.github.io/portfolio';
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const count = data.value;
+                visitorCount.textContent = count.toLocaleString();
+            })
+            .catch(error => {
+                console.log('Counter unavailable');
+                visitorCount.textContent = '∞';
+            });
+    })();
+    </script>
+
     <script>
     // Enhanced Loader Animation
     (function() {
