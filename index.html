@@ -115,7 +115,7 @@
     .chat-input-container textarea {
         background: transparent !important;
         border: none !important;
-        color: #fff !important;
+        color: #fde047 !important;
         font-size: 14px !important;
         line-height: 1.4 !important;
         padding: 12px 16px !important;
@@ -135,7 +135,7 @@
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        color: #fff !important;
+        color: #fde047 !important;
         transition: all 0.2s ease !important;
     }
     .send-btn:hover {
@@ -488,7 +488,7 @@
         align-items: center;
         gap: 8px;
         font-size: 13px;
-        color: #64748b;
+        color: #fde047;
         margin: 4px 0;
         transition: color 0.3s ease;
     }
@@ -508,7 +508,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: #64748b;
+        background: #fde047;
     }
 
     .stage.active .stage-dot {
@@ -614,10 +614,10 @@
         margin-top: 20px;
         padding: 12px 20px;
         background: rgba(251, 191, 36, 0.1);
-        border: 1.5px solid #fbbf24;
+        border: 1.5px solid #fde047;
         border-radius: 24px;
         font-size: 14px;
-        color: #fbbf24;
+        color: #fde047;
         animation: fadeInUp 0.8s ease-out 2.5s backwards;
         font-weight: 600;
         letter-spacing: 0.5px;
@@ -642,6 +642,1057 @@
             padding: 8px 14px;
             margin-top: 12px;
         }
+    }
+
+    /* Blog Section Styles */
+    .sonar-blog {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(6, 78, 111, 0.1) 100%);
+    }
+
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin: 50px 0;
+    }
+
+    .blog-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(251, 191, 36, 0.5);
+        box-shadow: 0 20px 60px rgba(251, 191, 36, 0.2);
+    }
+
+    .blog-image {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .blog-card:hover .blog-image img {
+        transform: scale(1.05);
+    }
+
+    .blog-category {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(251, 191, 36, 0.9);
+        color: #fde047;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .blog-content {
+        padding: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-content h3 {
+        color: #fde047;
+        font-size: 18px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    .blog-content p {
+        color: #fde047;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        flex: 1;
+    }
+
+    .blog-meta {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 12px;
+        color: rgba(251, 191, 36, 0.8);
+    }
+
+    .blog-link {
+        color: #fde047;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .blog-link:hover {
+        color: #f59e0b;
+        margin-right: -8px;
+    }
+
+    .blog-cta {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    /* Projects Section Styles */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 30px;
+        margin: 50px 0;
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(251, 191, 36, 0.5);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        border-color: #fde047;
+        background: rgba(251, 191, 36, 0.18);
+        box-shadow: 0 25px 70px rgba(251, 191, 36, 0.25);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.05);
+    }
+
+    .project-content {
+        padding: 30px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-content h3 {
+        color: #fde047;
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-weight: 800;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-content p {
+        color: #fde047;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .project-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .stat-value {
+        display: block;
+        color: #fde047;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        display: block;
+        color: #fde047;
+        font-size: 12px;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .tech-badge {
+        background: rgba(251, 191, 36, 0.2);
+        color: #fde047;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 12px;
+        border: 1.5px solid rgba(251, 191, 36, 0.5);
+        font-weight: 600;
+    }
+
+    .project-link {
+        color: #fde047;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        margin-top: auto;
+    }
+
+    .project-link:hover {
+        color: #92400e;
+    }
+
+    /* Stats Section Styles */
+    .sonar-stats {
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, rgba(217, 119, 6, 0.05) 100%);
+        padding: 80px 0;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+
+    .stat-card {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(251, 191, 36, 0.12);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 12px;
+        transition: all 0.4s ease;
+    }
+
+    .stat-card:hover {
+        background: rgba(251, 191, 36, 0.2);
+        border-color: #fde047;
+        transform: scale(1.08);
+        box-shadow: 0 15px 50px rgba(251, 191, 36, 0.2);
+    }
+
+    .stat-number {
+        font-size: 48px;
+        font-weight: 800;
+        background: linear-gradient(90deg, #f59e0b, #fde047);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+    }
+
+    .stat-title {
+        color: #fde047;
+        font-size: 14px;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    /* Testimonials Section Styles */
+    .sonar-testimonials {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(6, 78, 111, 0.1) 100%);
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .testimonial-card {
+        background: rgba(251, 191, 36, 0.08);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 16px;
+        padding: 30px;
+        transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+        background: rgba(251, 191, 36, 0.15);
+        border-color: #fde047;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 50px rgba(251, 191, 36, 0.2);
+    }
+
+    .testimonial-stars {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-stars i {
+        color: #fde047;
+        font-size: 14px;
+    }
+
+    .testimonial-text {
+        color: #fde047;
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0 0 20px 0;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fde047;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+
+    .author-info {
+        margin: 0;
+    }
+
+    .author-name {
+        color: #fde047;
+        margin: 0;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .author-role {
+        color: #fde047;
+        margin: 4px 0 0 0;
+        font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+        .blog-grid,
+        .projects-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-stats {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    /* Active Navigation Link */
+    .nav-link.active {
+        color: #fde047 !important;
+        border-bottom: 2px solid #fde047;
+    }
+
+    /* Sticky Navbar */
+    nav.sonar-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(15, 23, 42, 0.95) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Navigation improvements */
+    .nav-menu a {
+        position: relative;
+    }
+
+    .nav-menu a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #fde047;
+        transition: width 0.3s ease;
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+        width: 100%;
+    }
+
+    /* Skip to main content for accessibility */
+    .skip-to-content {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #fde047;
+        color: #000;
+        padding: 8px;
+        z-index: 100;
+    }
+
+    .skip-to-content:focus {
+        top: 0;
+    }
+
+    /* Button Styles */
+    .btn-sonar-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border: 2px solid #fde047;
+        background: transparent;
+        color: #fde047;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .btn-sonar-secondary:hover {
+        background: rgba(251, 191, 36, 0.1);
+        box-shadow: 0 8px 24px rgba(251, 191, 36, 0.2);
+        transform: translateY(-2px);
+    }
+
+    /* Contact Form Enhancement */
+    .contact-form input,
+    .contact-form textarea {
+        border: 1px solid rgba(251, 191, 36, 0.3) !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: #fde047 !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #fde047 !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 0 12px rgba(251, 191, 36, 0.2) !important;
+    }
+
+    .form-message {
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin-top: 10px;
+        font-size: 14px;
+        display: none;
+    }
+
+    .form-message.success {
+        background: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        display: block;
+    }
+
+    .form-message.error {
+        background: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        display: block;
+    }
+
+    /* Skills Grid Enhancement */
+    .skill-card {
+        background: rgba(251, 191, 36, 0.08) !important;
+        border: 2px solid rgba(251, 191, 36, 0.4) !important;
+        transition: all 0.4s ease;
+        border-radius: 12px;
+    }
+
+    .skill-card:hover {
+        background: rgba(251, 191, 36, 0.15) !important;
+        border-color: #fde047 !important;
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(251, 191, 36, 0.2);
+    }
+
+    .skill-info h3 {
+        color: #fde047 !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        margin: 0 0 8px 0 !important;
+    }
+
+    .skill-info p {
+        color: #fde047 !important;
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+
+    .skill-icon {
+        background: linear-gradient(135deg, #f59e0b, #fde047) !important;
+        border: none !important;
+        color: white !important;
+        width: 50px !important;
+        height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 10px !important;
+        font-size: 24px !important;
+    }
+
+    /* Awards Section */
+    .award-card, .cert-card {
+        background: rgba(251, 191, 36, 0.08);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        transition: all 0.4s ease;
+    }
+
+    .award-card:hover, .cert-card:hover {
+        background: rgba(251, 191, 36, 0.15);
+        border-color: #fde047;
+        transform: translateY(-10px);
+        box-shadow: 0 25px 70px rgba(251, 191, 36, 0.25);
+    }
+
+    .award-icon, .cert-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: white;
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .award-card:hover .award-icon,
+    .cert-card:hover .cert-icon {
+        transform: scale(1.15) rotate(8deg);
+    }
+
+    .award-name, .cert-title {
+        color: #fde047;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 12px 0 8px 0;
+    }
+
+    .award-issuer, .cert-issuer {
+        color: #fde047;
+        font-size: 12px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .award-meta, .cert-details {
+        color: #fde047;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    /* Tech Tags */
+    .tech-tag {
+        background: rgba(251, 191, 36, 0.15) !important;
+        color: #fde047 !important;
+        border: 1.5px solid rgba(251, 191, 36, 0.5) !important;
+        padding: 8px 14px !important;
+        border-radius: 20px !important;
+        font-size: 12px !important;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin: 6px 6px 6px 0;
+        font-weight: 600;
+    }
+
+    .tech-tag:hover {
+        background: rgba(251, 191, 36, 0.25) !important;
+        border-color: #fde047 !important;
+        color: #92400e !important;
+        transform: translateY(-2px);
+    }
+
+    .tech-tag i {
+        color: #f59e0b !important;
+        margin-right: 6px;
+    }
+
+    /* Section Title Improvements */
+    .section-title {
+        color: #fde047 !important;
+        font-size: 36px !important;
+        font-weight: 800 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .section-subtitle {
+        color: rgba(255, 255, 255, 0.85) !important;
+        font-size: 16px !important;
+        line-height: 1.7;
+        margin-bottom: 30px !important;
+    }
+
+    .section-badge {
+        background: rgba(251, 191, 36, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .section-badge span {
+        color: #fde047 !important;
+    }
+
+    /* Skills Category Headers */
+    .skills-section-header {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .skills-category-title {
+        color: #fde047 !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .skills-category-title i {
+        color: #fde047;
+        font-size: 22px;
+    }
+
+    /* Achievements Grid */
+    .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .achievement-card {
+        background: rgba(251, 191, 36, 0.1);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .achievement-card:hover {
+        background: rgba(251, 191, 36, 0.18);
+        border-color: #fde047;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 50px rgba(251, 191, 36, 0.2);
+    }
+
+    .achievement-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        flex-shrink: 0;
+    }
+
+    .achievement-content h4 {
+        color: #fde047;
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+    }
+
+    .achievement-content p {
+        color: #ca8a04;
+        font-size: 12px;
+        margin: 0;
+        font-weight: 500;
+    }
+
+    /* Awards Grid */
+    .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .award-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 12px;
+        padding: 25px;
+        position: relative;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .award-card:hover {
+        background: rgba(251, 191, 36, 0.15);
+        border-color: #fde047;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(251, 191, 36, 0.25);
+    }
+
+    .award-year-bg {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .award-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .award-content h3 {
+        color: #fde047;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
+
+    .award-content p {
+        color: #ca8a04;
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .award-badge {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .award-badge span {
+        background: rgba(251, 191, 36, 0.2);
+        color: #fde047;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        border: 1px solid rgba(251, 191, 36, 0.4);
+    }
+
+    /* Certifications Grid */
+    .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .certification-card {
+        background: rgba(251, 191, 36, 0.1);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.4s ease;
+    }
+
+    .certification-card:hover {
+        background: rgba(251, 191, 36, 0.18);
+        border-color: #fde047;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(251, 191, 36, 0.25);
+    }
+
+    .cert-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .cert-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        flex-shrink: 0;
+    }
+
+    .cert-badge {
+        background: rgba(34, 197, 94, 0.15);
+        color: #22c55e;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .cert-badge.verified {
+        background: rgba(34, 197, 94, 0.15);
+    }
+
+    .cert-title {
+        color: #fde047;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
+
+    .cert-issuer {
+        color: #fde047;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .cert-details {
+        color: #ca8a04;
+        font-size: 12px;
+        line-height: 1.6;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-weight: 500;
+    }
+
+    .cert-details span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .cert-details i {
+        color: #fde047;
+    }
+
+    @media (max-width: 768px) {
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        .btn-sonar-secondary {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* ===== COMPREHENSIVE COLOR SCHEME FIXES ===== */
+
+    /* HERO SECTION FIXES */
+    .hero-greeting {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .hero-title {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .hero-card p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    /* ABOUT SECTION FIXES */
+    .profile-info h3 {
+        color: #fde047 !important;
+    }
+
+    .profile-role {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .profile-location span {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .detail-card h4 {
+        color: #fde047 !important;
+    }
+
+    .detail-card p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .expertise-content h5 {
+        color: #fde047 !important;
+    }
+
+    .expertise-level {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* SKILLS SECTION FIXES */
+    .skill-info p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    /* EXPERIENCE SECTION FIXES */
+    .experience-info h3 {
+        color: #fde047 !important;
+    }
+
+    .company-name {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .experience-duration {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .experience-description p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .achievement-content p {
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    /* AWARDS SECTION FIXES */
+    .award-content p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    /* CERTIFICATIONS SECTION FIXES */
+    .cert-details {
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    /* EDUCATION SECTION FIXES */
+    .education-info h3 {
+        color: #fde047 !important;
+    }
+
+    .education-info h4 {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .education-institution {
+        color: rgba(255, 255, 255, 0.8) !important;
+        display: block !important;
+    }
+
+    .education-description {
+        color: rgba(255, 255, 255, 0.85) !important;
+        display: block !important;
+    }
+
+    /* BLOG SECTION FIXES */
+    .blog-content p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .blog-meta {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .blog-category {
+        background: #fde047 !important;
+        color: #000 !important;
+    }
+
+    /* PROJECTS SECTION FIXES */
+    .project-content p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .stat-label {
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    /* TESTIMONIALS SECTION FIXES */
+    .testimonial-text {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .author-role {
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+
+    /* CONTACT SECTION FIXES */
+    .contact-content h3 {
+        color: #fde047 !important;
+    }
+
+    .contact-action {
+        color: #fde047 !important;
+    }
+
+    /* NAVIGATION FIXES */
+    .nav-brand {
+        color: #fde047 !important;
+    }
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    /* FOOTER SECTION FIXES */
+    .footer-brand .brand-name {
+        color: #fde047 !important;
+    }
+
+    .footer-role {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .footer-social a {
+        color: #fde047 !important;
     }
 </style>
 
@@ -759,16 +1810,15 @@
                     <span class="brand-name">Khajana Raju</span>
                 </a>
                   <div class="nav-menu" id="navMenu">
-                    <a class="nav-link active" href="#home">Home</a>
-                    <a class="nav-link" href="#about">About</a>
-                    <a class="nav-link" href="#skills">Skills</a>
-                    <a class="nav-link" href="#experience">Experience</a>
-                    <a class="nav-link" href="#awards">Awards</a>
-                    <a class="nav-link" href="#certifications">Certifications</a>
-                    <a class="nav-link" href="blog.html">Blog</a>
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link active" href="#home" data-section="home">Home</a>
+                    <a class="nav-link" href="#about" data-section="about">About</a>
+                    <a class="nav-link" href="#experience" data-section="experience">Experience</a>
+                    <a class="nav-link" href="#projects" data-section="projects">Projects</a>
+                    <a class="nav-link" href="#blog" data-section="blog">Blog</a>
+                    <a class="nav-link" href="#certifications" data-section="certifications">Certifications</a>
+                    <a class="nav-link" href="#contact" data-section="contact">Contact</a>
                 </div>
-                
+
                 <button class="nav-toggle" id="navToggle">
                     <span></span>
                     <span></span>
@@ -822,6 +1872,9 @@
                     <div class="hero-buttons">
                         <a href="#contact" class="btn-sonar-primary">Let's Connect →</a>
                         <a href="#" id="launchChatBtn" class="btn-sonar-primary">Launch Chat 🤖</a>
+                        <a href="https://drive.google.com/file/d/1yourfileID/view?usp=sharing" target="_blank" class="btn-sonar-secondary" title="Download Resume">
+                            <i class="fas fa-download"></i> Resume
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1817,7 +2870,7 @@
                 <div class="certification-card">
                     <div class="cert-header">
                         <div class="cert-icon aws">
-                            <i class="fab fa-aws"></i>
+                            <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS Logo" style="width: 50px; height: 50px; object-fit: contain;">
                         </div>
                         <div class="cert-badge verified">
                             <i class="fas fa-check-circle"></i>
@@ -1847,7 +2900,7 @@
                 <div class="certification-card">
                     <div class="cert-header">
                         <div class="cert-icon anthropic">
-                            <span style="font-size: 20px; font-weight: bold;">A</span>
+                            <img src="https://www.anthropic.com/images/favicons/favicon.svg" alt="Anthropic Logo" style="width: 50px; height: 50px; object-fit: contain; filter: brightness(0) invert(1);">
                         </div>
                         <div class="cert-badge verified">
                             <i class="fas fa-check-circle"></i>
@@ -1874,7 +2927,7 @@
                 <div class="certification-card">
                     <div class="cert-header">
                         <div class="cert-icon anthropic">
-                            <span style="font-size: 20px; font-weight: bold;">A</span>
+                            <img src="https://www.anthropic.com/images/favicons/favicon.svg" alt="Anthropic Logo" style="width: 50px; height: 50px; object-fit: contain; filter: brightness(0) invert(1);">
                         </div>
                         <div class="cert-badge verified">
                             <i class="fas fa-check-circle"></i>
@@ -1908,8 +2961,7 @@
                     <span>Education</span>
                 </div>
                 <h2 class="section-title">
-                    Academic<br>
-                    <span class="gradient-text">foundation</span>
+                    Academic <span class="gradient-text">foundation</span>
                 </h2>
             </div>
             
@@ -2005,6 +3057,294 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>View on Map</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="sonar-section sonar-blog">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Latest Articles</span>
+                </div>
+                <h2 class="section-title">
+                    Insights &<br>
+                    <span class="gradient-text">Knowledge Sharing</span>
+                </h2>
+                <p class="section-subtitle">
+                    DevOps best practices, cloud solutions, and infrastructure automation tips
+                </p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop&q=85" alt="DevOps Basics">
+                        <span class="blog-category">DevOps</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Understanding CI/CD Pipelines</h3>
+                        <p>A comprehensive guide to building reliable CI/CD pipelines with automated testing, deployment, and monitoring strategies.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Jun 15, 2026</span>
+                            <span class="blog-read-time">8 min read</span>
+                        </div>
+                        <a href="blog.html" class="blog-link">Read Article →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&q=85" alt="Kubernetes">
+                        <span class="blog-category">Kubernetes</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Kubernetes Best Practices</h3>
+                        <p>Master Kubernetes orchestration with best practices for resource management, security, and scalability in production environments.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Jun 10, 2026</span>
+                            <span class="blog-read-time">10 min read</span>
+                        </div>
+                        <a href="blog.html" class="blog-link">Read Article →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&q=85" alt="Cloud Architecture">
+                        <span class="blog-category">Cloud</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AWS Cloud Architecture</h3>
+                        <p>Design scalable and secure AWS infrastructure with proven architectural patterns and cost optimization strategies.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Jun 5, 2026</span>
+                            <span class="blog-read-time">12 min read</span>
+                        </div>
+                        <a href="blog.html" class="blog-link">Read Article →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-cta">
+                <a href="blog.html" class="btn-sonar-primary">View All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="sonar-section sonar-projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Portfolio</span>
+                </div>
+                <h2 class="section-title">
+                    Featured<br>
+                    <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="section-subtitle">
+                    Showcase of successful infrastructure and automation projects
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop&q=85" alt="Kubernetes Migration">
+                    </div>
+                    <div class="project-content">
+                        <h3>Kubernetes Migration</h3>
+                        <p>Successfully migrated 50+ microservices to Kubernetes cluster with zero downtime and 40% infrastructure cost reduction.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">50+</span>
+                                <span class="stat-label">Services Migrated</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">0h</span>
+                                <span class="stat-label">Downtime</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">40%</span>
+                                <span class="stat-label">Cost Reduction</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Kubernetes</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">Helm</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&q=85" alt="CI/CD Pipeline">
+                    </div>
+                    <div class="project-content">
+                        <h3>Enterprise CI/CD Pipeline</h3>
+                        <p>Built comprehensive CI/CD pipeline reducing deployment time from 4 hours to 15 minutes with automated testing and rollback capabilities.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">240x</span>
+                                <span class="stat-label">Faster Deploy</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">99.9%</span>
+                                <span class="stat-label">Success Rate</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">2500+</span>
+                                <span class="stat-label">Deployments/year</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Jenkins</span>
+                            <span class="tech-badge">GitLab CI</span>
+                            <span class="tech-badge">Terraform</span>
+                            <span class="tech-badge">ArgoCD</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=85" alt="Infrastructure Automation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Infrastructure Automation</h3>
+                        <p>Developed Infrastructure as Code framework reducing infrastructure provisioning time by 80% and improving consistency across environments.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">80%</span>
+                                <span class="stat-label">Time Saved</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Consistency</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">500+</span>
+                                <span class="stat-label">Environments</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Terraform</span>
+                            <span class="tech-badge">Ansible</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">AWS CloudFormation</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="sonar-section sonar-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-target="500">
+                    <div class="stat-number">
+                        <span class="counter">0</span>+
+                    </div>
+                    <p class="stat-title">Successful Deployments</p>
+                </div>
+                <div class="stat-card" data-target="99">
+                    <div class="stat-number">
+                        <span class="counter">0</span>%
+                    </div>
+                    <p class="stat-title">System Uptime</p>
+                </div>
+                <div class="stat-card" data-target="50">
+                    <div class="stat-number">
+                        <span class="counter">0</span>+
+                    </div>
+                    <p class="stat-title">Infrastructure Projects</p>
+                </div>
+                <div class="stat-card" data-target="100">
+                    <div class="stat-number">
+                        <span class="counter">0</span>%
+                    </div>
+                    <p class="stat-title">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="sonar-section sonar-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Testimonials</span>
+                </div>
+                <h2 class="section-title">
+                    What clients<br>
+                    <span class="gradient-text">say about me</span>
+                </h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Khajana transformed our infrastructure overnight. His expertise in Kubernetes and AWS is unmatched. We went from manual deployments to fully automated CI/CD in just 3 weeks!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div class="author-info">
+                            <p class="author-name">Anu Rajesh</p>
+                            <p class="author-role">CTO, Tech Innovations Inc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Outstanding DevOps professional. His Infrastructure as Code implementation saved us 60% in cloud costs while improving system reliability. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <p class="author-name">Priya Mukherjee</p>
+                            <p class="author-role">Engineering Lead, Cloud Systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Best decision to bring Khajana on board. His DevOps expertise scaled our platform from handling 1000 to 100,000 concurrent users seamlessly!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <p class="author-name">Sunil Kumar</p>
+                            <p class="author-role">Founder, Scaling Platforms</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2243,6 +3583,232 @@
       linkMap.forEach((_, section)=>obs.observe(section));
     })();
     </script>
+
+    <!-- Counter Animation Script -->
+    <script>
+    (function() {
+        const counters = document.querySelectorAll('.counter');
+        const statCards = document.querySelectorAll('.stat-card');
+        let hasAnimated = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = parseInt(counter.parentElement.parentElement.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!hasAnimated && statCards.length > 0) {
+                const rect = statCards[0].getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    animateCounters();
+                    hasAnimated = true;
+                }
+            }
+        });
+    })();
+    </script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+    (function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.blog-card, .project-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    })();
+    </script>
+
+    <!-- Smooth Scroll Navigation -->
+    <script>
+    (function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active Navigation Highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    })();
+    </script>
+
+    <!-- Lazy Loading Images -->
+    <script>
+    (function() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        }
+    })();
+    </script>
+
+    <!-- Form Validation -->
+    <script>
+    (function() {
+        const form = document.querySelector('.contact-form');
+        if (!form) return;
+
+        const inputs = form.querySelectorAll('input, textarea');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        const validateEmail = (email) => {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        };
+
+        const showMessage = (message, type) => {
+            let messageEl = form.querySelector('.form-message');
+            if (!messageEl) {
+                messageEl = document.createElement('div');
+                messageEl.className = 'form-message';
+                form.appendChild(messageEl);
+            }
+            messageEl.textContent = message;
+            messageEl.className = `form-message ${type}`;
+        };
+
+        const validateForm = () => {
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                } else {
+                    input.style.borderColor = 'rgba(251, 191, 36, 0.3)';
+                }
+
+                if (input.type === 'email' && input.value && !validateEmail(input.value)) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                }
+            });
+
+            return isValid;
+        };
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.value.trim()) {
+                    if (input.type === 'email' && !validateEmail(input.value)) {
+                        input.style.borderColor = '#ef4444';
+                    } else {
+                        input.style.borderColor = 'rgba(251, 191, 36, 0.5)';
+                    }
+                }
+            });
+        });
+
+        if (submitBtn) {
+            submitBtn.addEventListener('click', (e) => {
+                if (!validateForm()) {
+                    e.preventDefault();
+                    showMessage('Please fill in all fields correctly.', 'error');
+                } else {
+                    showMessage('Thank you! I'll get back to you soon.', 'success');
+                }
+            });
+        }
+    })();
+    </script>
+
+    <!-- Performance: Image Optimization Script -->
+    <script>
+    (function() {
+        // Add responsive image hints
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
+            if (!img.hasAttribute('decoding')) {
+                img.setAttribute('decoding', 'async');
+            }
+        });
+
+        // Preload critical images
+        const preloadImages = [
+            'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop&q=85'
+        ];
+
+        preloadImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+    })();
+    </script>
+
     <script>
 (function(){
   const launcher = document.getElementById('launchChatBtn');
