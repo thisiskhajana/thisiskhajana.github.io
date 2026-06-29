@@ -27,8 +27,8 @@ I'm a **Lead DevOps Engineer** at FactSet with a passion for automating everythi
 
 | Role | Company | Duration | Impact |
 |------|---------|----------|--------|
-| **Lead DevOps Engineer** | FactSet Systems India | 2019 - Present | Orchestrating enterprise Kubernetes environments, managing multi-environment infrastructure, reducing deployment time by 60% |
-| **DevOps Engineer** | Futurism Technologies | 2018 - 2019 | AWS infrastructure automation, CI/CD pipeline implementation, containerization |
+| **Lead DevOps Engineer** | FactSet Systems India | Orchestrating enterprise Kubernetes environments, managing multi-environment infrastructure, reducing deployment time by 60% |
+| **DevOps Engineer** | Futurism Technologies | AWS infrastructure automation, CI/CD pipeline implementation, containerization |
 
 ---
 
