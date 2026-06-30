@@ -1,9 +1,9 @@
 // ===== PING SERVER ON PAGE LOAD =====
 function pingServer() {
     console.log('🔄 Pinging server to wake it up...');
-    console.log('📍 Target URL: https://puneeth-portfolio-asst-8c01c90c4c03.herokuapp.com/api/chat');
+    console.log('📍 Target URL: https://khajana-portfolio-asst-8c01c90c4c03.herokuapp.com/api/chat');
     
-    fetch('https://puneeth-portfolio-asst-8c01c90c4c03.herokuapp.com/api/chat', {
+    fetch('https://khajana-portfolio-asst-8c01c90c4c03.herokuapp.com/api/chat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ function initializeChatbot() {
         try {
             console.log('Sending to Flask backend...');
             // Send to Flask backend
-            const response = await fetch('https://puneeth-portfolio-asst-8c01c90c4c03.herokuapp.com/api/chat', {
+            const response = await fetch('https://khajana-portfolio-asst-8c01c90c4c03.herokuapp.com/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
