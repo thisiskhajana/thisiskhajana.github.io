@@ -753,9 +753,21 @@
     /* Projects Section Styles */
     .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         margin: 50px 0;
+    }
+
+    @media (max-width: 1200px) {
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     .project-card {
@@ -914,6 +926,69 @@
         font-size: 14px;
         margin: 0;
         font-weight: 600;
+    }
+
+    /* Beyond Code Section Styles */
+    .beyond-code-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .hobby-card {
+        background: rgba(251, 191, 36, 0.08);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 16px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.4s ease;
+    }
+
+    .hobby-card:hover {
+        background: rgba(251, 191, 36, 0.15);
+        border-color: #fde047;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 50px rgba(251, 191, 36, 0.2);
+    }
+
+    .hobby-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, #f59e0b, #fde047);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: white;
+    }
+
+    .hobby-card h3 {
+        color: #fde047;
+        font-size: 18px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .hobby-card p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    @media (max-width: 1200px) {
+        .beyond-code-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .beyond-code-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Testimonials Section Styles */
@@ -1123,6 +1198,36 @@
     }
 
     /* Skills Grid Enhancement */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    @media (max-width: 1400px) {
+        .skills-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .skills-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
     .skill-card {
         background: rgba(251, 191, 36, 0.08) !important;
         border: 2px solid rgba(251, 191, 36, 0.4) !important;
@@ -1522,6 +1627,36 @@
         color: #fde047;
     }
 
+    .hero-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-buttons .btn-sonar-primary,
+    .btn-sonar-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border: 2px solid #fde047;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        color: #fde047;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .btn-sonar-primary:hover {
+        background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+        box-shadow: 0 8px 24px rgba(251, 191, 36, 0.2);
+        transform: translateY(-2px);
+    }
+
     @media (max-width: 768px) {
         .hero-buttons {
             flex-direction: column;
@@ -1536,12 +1671,29 @@
     /* ===== COMPREHENSIVE COLOR SCHEME FIXES ===== */
 
     /* HERO SECTION FIXES */
+    .sonar-hero {
+        padding: 60px 0 40px 0 !important;
+    }
+
+    .hero-header {
+        margin-bottom: 15px !important;
+    }
+
     .hero-greeting {
         color: rgba(255, 255, 255, 0.85) !important;
+        margin-bottom: 8px !important;
+        font-size: 16px !important;
+    }
+
+    .hero-name {
+        font-size: 48px !important;
+        margin-bottom: 8px !important;
     }
 
     .hero-title {
         color: rgba(255, 255, 255, 0.9) !important;
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
     }
 
     .hero-card p {
@@ -1559,6 +1711,7 @@
 
     .profile-location span {
         color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 16px !important;
     }
 
     .detail-card h4 {
@@ -1571,10 +1724,12 @@
 
     .expertise-content h5 {
         color: #fde047 !important;
+        font-size: 18px !important;
     }
 
     .expertise-level {
         color: rgba(255, 255, 255, 0.7) !important;
+        font-size: 14px !important;
     }
 
     /* SKILLS SECTION FIXES */
@@ -1614,22 +1769,90 @@
     }
 
     /* EDUCATION SECTION FIXES */
+    .education-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .education-card {
+        background: rgba(251, 191, 36, 0.08);
+        border: 2px solid rgba(251, 191, 36, 0.4);
+        border-radius: 16px;
+        padding: 30px;
+        display: flex;
+        gap: 20px;
+        transition: all 0.4s ease;
+    }
+
+    .education-card:hover {
+        background: rgba(251, 191, 36, 0.15);
+        border-color: #fde047;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 50px rgba(251, 191, 36, 0.2);
+    }
+
+    .education-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    .education-info {
+        flex: 1;
+    }
+
     .education-info h3 {
         color: #fde047 !important;
+        margin: 0 0 8px 0;
+        font-size: 18px !important;
     }
 
     .education-info h4 {
         color: rgba(255, 255, 255, 0.85) !important;
+        margin: 0 0 4px 0;
+        font-size: 14px !important;
+        font-weight: 600 !important;
     }
 
     .education-institution {
         color: rgba(255, 255, 255, 0.8) !important;
         display: block !important;
+        font-size: 12px !important;
+        margin-bottom: 12px !important;
+        font-weight: 500 !important;
     }
 
     .education-description {
-        color: rgba(255, 255, 255, 0.85) !important;
+        color: rgba(255, 255, 255, 0.75) !important;
         display: block !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+
+    @media (max-width: 1200px) {
+        .education-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .education-content {
+            grid-template-columns: 1fr;
+        }
+
+        .education-card {
+            flex-direction: column;
+        }
     }
 
     /* BLOG SECTION FIXES */
@@ -1813,7 +2036,7 @@
                     <a class="nav-link active" href="#home" data-section="home">About</a>
                     <a class="nav-link" href="#skills" data-section="skills">Technical Stack</a>
                     <a class="nav-link" href="#experience" data-section="experience">Experience</a>
-                    <a class="nav-link" href="#awards" data-section="awards">Credentials</a>
+                    <a class="nav-link" href="#credentials" data-section="credentials">Credentials</a>
                     <a class="nav-link" href="#projects" data-section="projects">Projects</a>
                     <a class="nav-link" href="#blog" data-section="blog">Blog</a>
                     <a class="nav-link" href="#contact" data-section="contact">Connect</a>
@@ -1838,15 +2061,15 @@
                     </div>
 
                     <!-- Centered Profile Image -->
-                    <div style="text-align: center; margin: 40px 0;">
+                    <div style="text-align: center; margin: 20px 0;">
                         <div class="profile-image-container" style="display: inline-block; position: relative;">
-                            <img src="photo.png" alt="Khajana Raju Yandapalli" class="profile-image" loading="lazy" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 4px solid #fde047; box-shadow: 0 0 30px rgba(253, 224, 71, 0.3);">
+                            <img src="photo.png" alt="Khajana Raju Yandapalli" class="profile-image" loading="lazy" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fde047; box-shadow: 0 0 30px rgba(253, 224, 71, 0.3); filter: brightness(1.05) contrast(1.1) saturate(1.1);">
                         </div>
                     </div>
 
                     <!-- Profile Info Below Image -->
-                    <div style="text-align: center; margin-bottom: 40px;">
-                        <div class="profile-location" style="justify-content: center; margin-bottom: 15px;">
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <div class="profile-location" style="justify-content: center; margin-bottom: 10px;">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Hyderabad, India</span>
                         </div>
@@ -1864,14 +2087,14 @@
                     </div>
 
                     <!-- Bio Section -->
-                    <div class="detail-card" style="max-width: 700px; margin: 0 auto 40px; text-align: center;">
-                        <p>Award-winning DevOps architect transforming enterprise infrastructure through scalable cloud solutions on AWS. I architect and deliver high-performance, fault-tolerant systems by seamlessly merging development and operations practices—leveraging advanced Infrastructure as Code (Terraform), enterprise-grade CI/CD automation, and cutting-edge containerization strategies to drive business velocity and operational excellence.</p>
+                    <div class="detail-card" style="max-width: 700px; margin: 0 auto 20px; text-align: center; font-size: 16px;">
+                        <p style="margin-bottom: 10px;">DevOps architect transforming enterprise infrastructure through scalable cloud solutions on AWS. Expert in Kubernetes (EKS), CI/CD automation, Infrastructure as Code (Terraform), and SRE practices.</p>
 
-                        <p>Proven leader in enterprise-scale infrastructure transformation with a track record of delivering 70%+ cost optimizations, reducing deployment cycles from hours to minutes, and maintaining 99.99%+ system uptime across global deployments. AWS Certified Solutions Architect specializing in Kubernetes (EKS) orchestration, real-time observability (Prometheus, Grafana, Datadog), and SRE practices. Passionate about building resilient systems that scale, accelerate innovation, and empower teams to ship with confidence.</p>
+                        <p style="margin-bottom: 0;">Delivering 70%+ cost optimizations, reducing deployment cycles from hours to minutes, and maintaining 99.99%+ system uptime. AWS Certified Solutions Architect with expertise in real-time observability and building resilient, scalable systems.</p>
                     </div>
 
                     <!-- Expertise Grid -->
-                    <div class="expertise-grid" style="max-width: 800px; margin: 0 auto 40px;">
+                    <div class="expertise-grid" style="max-width: 800px; margin: 0 auto 20px;">
                         <div class="expertise-item">
                             <div class="expertise-icon">
                                 <i class="fas fa-code-branch"></i>
@@ -1897,23 +2120,13 @@
                                 <i class="fas fa-cogs"></i>
                             </div>
                             <div class="expertise-content">
-                                <h5>Automation</h5>
+                                <h5>AI/LLM & Automation</h5>
                                 <span class="expertise-level">Expert Level</span>
-                            </div>
-                        </div>
-
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="expertise-content">
-                                <h5>Scripting</h5>
-                                <span class="expertise-level">Advanced Level</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="hero-buttons">
+                    <div class="hero-buttons" style="margin-top: 20px;">
                         <a href="#contact" class="btn-sonar-primary">Let's Connect →</a>
                         <a href="#" id="launchChatBtn" class="btn-sonar-primary">Launch Chat 🤖</a>
                     </div>
@@ -1932,15 +2145,7 @@
                 </p>
             </div>
 
-            <!-- Tools & Technologies Section -->
-            <div class="skills-section-header">
-                <h3 class="skills-category-title">
-                    <i class="fas fa-tools"></i>
-                    Tools & Technologies
-                </h3>
-            </div>
-            
-            <div class="skills-grid tools-skills" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="skills-grid tools-skills">
                 <!-- 1. AWS -->
                 <div class="skill-card primary-skill">
                     <div class="skill-header">
@@ -1960,7 +2165,6 @@
                             <span class="tech-tag"><i class="fas fa-network-wired"></i> VPC</span>
                             <span class="tech-tag"><i class="fas fa-code"></i> Lambda</span>
                             <span class="tech-tag"><i class="fas fa-balance-scale"></i> ELB</span>
-                            <span class="tech-tag"><i class="fas fa-eye"></i> CloudWatch</span>
                         </div>
                     </div>
                 </div>
@@ -1982,8 +2186,6 @@
                             <span class="tech-tag"><i class="fas fa-dharmachakra"></i> Kubernetes</span>
                             <span class="tech-tag"><i class="fas fa-helmet-safety"></i> Helm</span>
                             <span class="tech-tag"><i class="fas fa-layer-group"></i> Multi-stage</span>
-                            <span class="tech-tag"><i class="fas fa-shield-alt"></i> RBAC</span>
-                            <span class="tech-tag"><i class="fas fa-expand-arrows-alt"></i> Auto-scaling</span>
                         </div>
                     </div>
                 </div>
@@ -2004,8 +2206,6 @@
                             <span class="tech-tag"><i class="fas fa-hammer"></i> Jenkins</span>
                             <span class="tech-tag"><i class="fab fa-github"></i> GitHub Actions</span>
                             <span class="tech-tag"><i class="fas fa-tasks"></i> Azure Pipelines</span>
-                            <span class="tech-tag"><i class="fas fa-code"></i> Pipeline as Code</span>
-                            <span class="tech-tag"><i class="fas fa-robot"></i> Automation</span>
                         </div>
                     </div>
                 </div>
@@ -2027,7 +2227,6 @@
                             <span class="tech-tag"><i class="fas fa-cloud"></i> CloudFormation</span>
                             <span class="tech-tag"><i class="fab fa-ansible"></i> Ansible</span>
                             <span class="tech-tag"><i class="fas fa-cogs"></i> Puppet</span>
-                            <span class="tech-tag"><i class="fas fa-code-branch"></i> Version Control</span>
                         </div>
                     </div>
                 </div>
@@ -2049,7 +2248,6 @@
                             <span class="tech-tag"><i class="fas fa-chart-area"></i> Grafana</span>
                             <span class="tech-tag"><i class="fas fa-search"></i> ELK/Splunk</span>
                             <span class="tech-tag"><i class="fas fa-bell"></i> AlertManager</span>
-                            <span class="tech-tag"><i class="fas fa-tachometer-alt"></i> Datadog</span>
                         </div>
                     </div>
                 </div>
@@ -2113,7 +2311,6 @@
                             <span class="tech-tag"><i class="fas fa-terminal"></i> PowerShell</span>
                             <span class="tech-tag"><i class="fas fa-code"></i> Bash</span>
                             <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                            <span class="tech-tag"><i class="fas fa-file-code"></i> YAML/JSON</span>
                             <span class="tech-tag"><i class="fas fa-exchange-alt"></i> REST APIs</span>
                         </div>
                     </div>
@@ -2132,7 +2329,6 @@
                     </div>
                     <div class="skill-features">
                         <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-fish"></i> MySQL</span>
                             <span class="tech-tag"><i class="fas fa-elephant"></i> PostgreSQL</span>
                             <span class="tech-tag"><i class="fas fa-server"></i> SQL Server</span>
                             <span class="tech-tag"><i class="fas fa-leaf"></i> MongoDB</span>
@@ -2323,76 +2519,30 @@
                 </div>
             </div>
         </div>
-    </section>    <!-- Awards Section -->
-    <section id="awards" class="sonar-section">
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="credentials" class="sonar-section">
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">
-                    <span>Recognition & Credentials</span>
+                    <span>Credentials</span>
                 </div>
                 <h2 class="section-title">
-                    Awards, Achievements &<br>
+                    Professional<br>
                     <span class="gradient-text">Certifications</span>
                 </h2>
                 <p class="section-subtitle">
-                    Recognition for excellence and professional certifications validating expertise
+                    Industry-recognized certifications validating expertise
                 </p>
             </div>
 
-            <!-- Awards Section -->
-            <h3 style="color: #fde047; margin-top: 40px; margin-bottom: 20px; text-align: center; font-size: 24px;">🏆 Awards & Achievements</h3>
-            <div class="awards-grid" style="margin-bottom: 60px;">
-                <div class="award-card">
-                    <div class="award-year-bg">2019+</div>
-                    <div class="award-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="award-content">
-                        <h3>Infrastructure Excellence</h3>
-                        <p>Lead successful transformation of infrastructure automation across multiple environments. Reduced deployment time and improved system reliability through Kubernetes orchestration and comprehensive observability implementations.</p>
-                    </div>
-                    <div class="award-badge">
-                        <span>Leadership Award</span>
-                    </div>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-year-bg">2019+</div>
-                    <div class="award-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="award-content">
-                        <h3>DevOps Transformation Excellence</h3>
-                        <p>Orchestrated successful CI/CD pipeline implementations across enterprise projects. Achieved 85% reduction in manual intervention through automation and Infrastructure as Code practices.</p>
-                    </div>
-                    <div class="award-badge">
-                        <span>Project Excellence</span>
-                    </div>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-year-bg">2018+</div>
-                    <div class="award-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="award-content">
-                        <h3>AWS Cloud Architecture & Scaling</h3>
-                        <p>Recognized for designing and implementing highly available, fault-tolerant, and scalable multi-tier AWS environments. Expertise in cost optimization and production-grade infrastructure.</p>
-                    </div>
-                    <div class="award-badge">
-                        <span>Technical Excellence</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certifications Section -->
-            <h3 style="color: #fde047; margin-top: 40px; margin-bottom: 20px; text-align: center; font-size: 24px;">📜 Professional Certifications</h3>
             <div class="certifications-grid">
                 <!-- AWS Certified Solutions Architect – Associate -->
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-icon aws">
-                            <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS Logo" style="width: 50px; height: 50px; object-fit: contain;">
+                        <div class="cert-icon aws" style="background: linear-gradient(135deg, #FF9900, #FF9900); font-size: 28px;">
+                            <i class="fab fa-aws"></i>
                         </div>
                         <div class="cert-badge verified">
                             <i class="fas fa-check-circle"></i>
@@ -2412,17 +2562,14 @@
                                 Expires: Aug 2023
                             </span>
                         </div>
-                        <div class="cert-skills">
-                            <strong>Skills:</strong> AWS Architecture, EC2, RDS, S3, VPC, CloudFormation
-                        </div>
                     </div>
                 </div>
 
                 <!-- Claude 101 Certificate -->
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-icon anthropic">
-                            <img src="https://www.anthropic.com/images/favicons/favicon.svg" alt="Anthropic Logo" style="width: 50px; height: 50px; object-fit: contain; filter: brightness(0) invert(1);">
+                        <div class="cert-icon anthropic" style="background: linear-gradient(135deg, #8b5cf6, #6366f1); font-size: 28px;">
+                            <i class="fas fa-brain"></i>
                         </div>
                         <div class="cert-badge verified">
                             <i class="fas fa-check-circle"></i>
@@ -2448,8 +2595,8 @@
                 <!-- Introduction to Model Context Protocol -->
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-icon anthropic">
-                            <img src="https://www.anthropic.com/images/favicons/favicon.svg" alt="Anthropic Logo" style="width: 50px; height: 50px; object-fit: contain; filter: brightness(0) invert(1);">
+                        <div class="cert-icon anthropic" style="background: linear-gradient(135deg, #8b5cf6, #6366f1); font-size: 28px;">
+                            <i class="fas fa-link"></i>
                         </div>
                         <div class="cert-badge verified">
                             <i class="fas fa-check-circle"></i>
@@ -2494,9 +2641,6 @@
                     </div>
                     <div class="education-info">
                         <h3>M. Tech in Computer Science Engineering</h3>
-                        <h4>Sarada Engineering College</h4>
-                        <p class="education-institution">JNTUK</p>
-                        <p class="education-description">Advanced studies in computer science and software engineering, focusing on infrastructure and system design.</p>
                     </div>
                 </div>
 
@@ -2506,9 +2650,6 @@
                     </div>
                     <div class="education-info">
                         <h3>B. Tech in Computer Science Engineering</h3>
-                        <h4>Sarada Engineering College</h4>
-                        <p class="education-institution">JNTUK</p>
-                        <p class="education-description">Comprehensive foundation in software engineering, programming, networking, and distributed systems supporting my DevOps career.</p>
                     </div>
                 </div>
 
@@ -2518,9 +2659,6 @@
                     </div>
                     <div class="education-info">
                         <h3>Diploma in Computer Science Engineering</h3>
-                        <h4>Government Polytechnic</h4>
-                        <p class="education-institution">SBTET</p>
-                        <p class="education-description">Technical foundation in computer science and electronics, establishing core engineering principles.</p>
                     </div>
                 </div>
             </div>
@@ -2711,6 +2849,52 @@
         </div>
     </section>
 
+    <!-- Beyond Code Section -->
+    <section id="beyond-code" class="sonar-section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(6, 78, 111, 0.1) 100%);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>PERSONAL</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="gradient-text">Beyond Code</span>
+                </h2>
+                <p class="section-subtitle">
+                    When I'm not building platforms, you'll find me outdoors.
+                </p>
+            </div>
+
+            <div class="beyond-code-grid">
+                <!-- Chess -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Chess</h3>
+                    <p>Strategic thinking and tactical problem-solving on the board</p>
+                </div>
+
+                <!-- Cricket -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-ball"></i>
+                    </div>
+                    <h3>Cricket</h3>
+                    <p>Team sport enthusiast who loves the thrill of the game</p>
+                </div>
+
+                <!-- Movies -->
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Movies</h3>
+                    <p>Big fan of cinema — from action blockbusters to thought-provoking dramas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Connect Section -->
     <section id="contact" class="sonar-section sonar-contact">
         <div class="container">
@@ -2803,76 +2987,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="sonar-section sonar-testimonials">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <span>Testimonials</span>
-                </div>
-                <h2 class="section-title">
-                    What clients<br>
-                    <span class="gradient-text">say about me</span>
-                </h2>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Khajana transformed our infrastructure overnight. His expertise in Kubernetes and AWS is unmatched. We went from manual deployments to fully automated CI/CD in just 3 weeks!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AR</div>
-                        <div class="author-info">
-                            <p class="author-name">Anu Rajesh</p>
-                            <p class="author-role">CTO, Tech Innovations Inc</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Outstanding DevOps professional. His Infrastructure as Code implementation saved us 60% in cloud costs while improving system reliability. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">PM</div>
-                        <div class="author-info">
-                            <p class="author-name">Priya Mukherjee</p>
-                            <p class="author-role">Engineering Lead, Cloud Systems</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Best decision to bring Khajana on board. His DevOps expertise scaled our platform from handling 1000 to 100,000 concurrent users seamlessly!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SK</div>
-                        <div class="author-info">
-                            <p class="author-name">Sunil Kumar</p>
-                            <p class="author-role">Founder, Scaling Platforms</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="sonar-footer">
