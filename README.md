@@ -27,8 +27,10 @@ I'm a **Lead DevOps Engineer** at FactSet with a passion for automating everythi
 
 | Role | Company | Duration | Impact |
 |------|---------|----------|--------|
-| **Lead DevOps Engineer** | FactSet Systems India | Orchestrating enterprise Kubernetes environments, managing multi-environment infrastructure, reducing deployment time by 60% |
-| **DevOps Engineer** | Futurism Technologies | AWS infrastructure automation, CI/CD pipeline implementation, containerization |
+| **Lead DevOps Engineer** | FactSet Systems India | Jun 2019 - Present | Orchestrating enterprise Kubernetes environments, managing multi-environment infrastructure, reducing deployment time by 60% |
+| **DevOps Engineer** | Futurism Technologies | Nov 2018 - Jun 2019 | AWS infrastructure automation, CI/CD pipeline implementation, containerization |
+| **DevOps / AWS Engineer** | Tata Consultancy Services | Jun 2016 - Nov 2018 | Cloud infrastructure design, CI/CD automation, infrastructure automation |
+| **Build & Release Engineer** | HP PVT LTD | Jul 2011 - May 2013 | Build automation, release management, deployment workflow automation |
 
 ---
 
@@ -87,7 +89,7 @@ I'm a **Lead DevOps Engineer** at FactSet with a passion for automating everythi
 ## 👨‍💼 Career Timeline
 
 ### 🌟 Lead DevOps Engineer — FactSet Systems India Pvt Ltd
-**Current Position** | Hyderabad
+**Jun 2019 - Present** | Hyderabad
 
 **Responsibility:** Lead infrastructure strategy and team mentorship
 
@@ -104,7 +106,7 @@ I'm a **Lead DevOps Engineer** at FactSet with a passion for automating everythi
 ---
 
 ### 🚀 DevOps Engineer — Futurism Technologies Pvt Ltd
-**Previous Position** | Hyderabad
+**Nov 2018 - Jun 2019** | Hyderabad
 
 **Responsibility:** Infrastructure automation and CI/CD pipeline design
 
@@ -116,6 +118,38 @@ I'm a **Lead DevOps Engineer** at FactSet with a passion for automating everythi
 - 🛠️ **IaC Implementation** — Created Terraform modules reducing infrastructure deployment time by 70%
 
 **Tech Stack:** AWS • Docker • Jenkins • Terraform • Ansible • Shell Scripting
+
+---
+
+### 💼 DevOps / AWS Engineer — Tata Consultancy Services (TCS)
+**Jun 2016 - Nov 2018** | Hyderabad
+
+**Responsibility:** Cloud infrastructure design and CI/CD automation
+
+**Key Achievements:**
+- ☁️ **AWS Architecture** — Designed and deployed scalable cloud solutions for enterprise applications
+- 🔄 **CI/CD Automation** — Implemented automated testing and deployment pipelines using Jenkins
+- 🐳 **Containerization** — Migrated applications to Docker for improved portability
+- 📊 **Infrastructure Automation** — Created Ansible playbooks for infrastructure provisioning
+- 🛠️ **DevOps Best Practices** — Mentored junior engineers on modern deployment strategies
+
+**Tech Stack:** AWS • Docker • Jenkins • Terraform • Ansible • Linux
+
+---
+
+### 🛠️ Build and Release Engineer — HP PVT LTD
+**Jul 2011 - May 2013** | Bangalore
+
+**Responsibility:** Build automation and release management
+
+**Key Achievements:**
+- 🚀 **Build Automation** — Developed and maintained build automation scripts reducing build time by 40%
+- 📦 **Release Management** — Orchestrated release processes for enterprise software products
+- 🔄 **Deployment Automation** — Created automated deployment workflows for multiple environments
+- 👥 **Cross-team Collaboration** — Worked closely with development teams to streamline processes
+- 📝 **Documentation** — Created comprehensive build and release documentation
+
+**Tech Stack:** Jenkins • Shell Scripting • Make • Version Control Systems (SVN/Git)
 
 ---
 
@@ -131,11 +165,11 @@ I'm a **Lead DevOps Engineer** at FactSet with a passion for automating everythi
 
 ## 🎓 Education
 
-| Degree | Institution | University |
-|--------|-------------|-----------|
-| **M. Tech** • Computer Science Engineering | Sarada Engineering College | JNTUK |
-| **B. Tech** • Computer Science Engineering | Sarada Engineering College | JNTUK |
-| **Diploma** • Computer Science Engineering | Government Polytechnic | SBTET |
+| Degree | Institution | University | Year |
+|--------|-------------|-----------|------|
+| **M. Tech** • Computer Science Engineering | Sarada Engineering College | JNTUK | 2019 |
+| **B. Tech** • Computer Science Engineering | Sarada Engineering College | JNTUK | 2016 |
+| **Diploma** • Computer Science Engineering | Government Polytechnic | SBTET | 2011 |
 
 ---
 
