@@ -308,6 +308,286 @@
         to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes glow-pulse {
+        0%, 100% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        50% {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.4), inset 0 0 20px rgba(59, 130, 246, 0.1);
+            border-color: #8b5cf6;
+        }
+    }
+
+    @keyframes float-gentle {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.4), 0 0 80px rgba(59, 130, 246, 0.2);
+            transform: scale(1);
+        }
+        50% {
+            box-shadow: 0 0 60px rgba(6, 182, 212, 0.6), 0 0 120px rgba(59, 130, 246, 0.3);
+            transform: scale(1.1);
+        }
+    }
+
+    @keyframes spin-slow {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes sparkle-burst {
+        0% {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(var(--tx), var(--ty)) scale(0);
+        }
+    }
+
+    .sparkle {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: radial-gradient(circle, #fde047, #06b6d4);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        animation: sparkle-burst 0.8s ease-out forwards;
+        box-shadow: 0 0 10px rgba(253, 224, 71, 0.8), 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+    .relocation-badge {
+        animation: float-gentle 4s ease-in-out infinite !important;
+        transition: all 0.3s ease;
+    }
+
+    .relocation-badge:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4) !important;
+    }
+
+    @keyframes sparkle {
+        0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+        50% { opacity: 1; transform: scale(1) rotate(180deg); }
+    }
+
+    @keyframes blast-in {
+        0% { opacity: 0; transform: scale(0.8) rotateX(-20deg); filter: blur(10px); }
+        100% { opacity: 1; transform: scale(1) rotateX(0deg); filter: blur(0px); }
+    }
+
+    @keyframes shine-wave {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+    }
+
+    @keyframes float-up {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+
+    .skill-card {
+        animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.1s; }
+    .skill-card:nth-child(2) { animation-delay: 0.2s; }
+    .skill-card:nth-child(3) { animation-delay: 0.3s; }
+    .skill-card:nth-child(4) { animation-delay: 0.4s; }
+    .skill-card:nth-child(5) { animation-delay: 0.5s; }
+    .skill-card:nth-child(6) { animation-delay: 0.6s; }
+    .skill-card:nth-child(7) { animation-delay: 0.7s; }
+    .skill-card:nth-child(8) { animation-delay: 0.8s; }
+    .skill-card:nth-child(9) { animation-delay: 0.9s; }
+
+    .skill-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .skill-card:hover::before {
+        animation: shine-wave 0.6s ease-in-out;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(6, 182, 212, 0.4), inset 0 0 30px rgba(59, 130, 246, 0.1);
+        border-color: #06b6d4;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
+    }
+
+    .skill-icon {
+        animation: float-up 3s ease-in-out infinite;
+        position: relative;
+    }
+
+    .skill-card:hover .skill-icon {
+        animation: float-up 2s ease-in-out infinite;
+    }
+
+    .experience-card {
+        animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards !important;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .experience-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .experience-card:hover::before {
+        animation: shine-wave 0.6s ease-in-out;
+    }
+
+    .experience-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 60px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.05);
+    }
+
+    .experience-card:nth-child(1):hover {
+        border-color: #06b6d4;
+        box-shadow: 0 25px 60px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.05) !important;
+    }
+
+    .experience-card:nth-child(2):hover {
+        border-color: #a855f7;
+        box-shadow: 0 25px 60px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.05) !important;
+    }
+
+    .certification-card {
+        animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards !important;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .certification-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .certification-card:hover::before {
+        animation: shine-wave 0.6s ease-in-out;
+    }
+
+    .certification-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 25px 60px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.05);
+    }
+
+    .certification-card:nth-child(1):hover {
+        border-color: #FF9900;
+        box-shadow: 0 25px 60px rgba(255, 153, 0, 0.3), inset 0 0 20px rgba(255, 153, 0, 0.05) !important;
+    }
+
+    .certification-card:nth-child(2):hover {
+        border-color: #a855f7;
+        box-shadow: 0 25px 60px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.05) !important;
+    }
+
+    .certification-card:nth-child(3):hover {
+        border-color: #06b6d4;
+        box-shadow: 0 25px 60px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.05) !important;
+    }
+
+    .education-card {
+        animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards !important;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .education-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .education-card:hover::before {
+        animation: shine-wave 0.6s ease-in-out;
+    }
+
+    .education-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 25px 60px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.05);
+    }
+
+    .education-card:nth-child(1):hover {
+        border-color: #a855f7;
+        box-shadow: 0 25px 60px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.05) !important;
+    }
+
+    .education-card:nth-child(2):hover {
+        border-color: #06b6d4;
+        box-shadow: 0 25px 60px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.05) !important;
+    }
+
+    .education-card:nth-child(3):hover {
+        border-color: #10b981;
+        box-shadow: 0 25px 60px rgba(16, 185, 129, 0.3), inset 0 0 20px rgba(16, 185, 129, 0.05) !important;
+    }
+
+    .skill-header h3 {
+        background: linear-gradient(135deg, #fde047, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+    }
+
+    .skill-card:hover .skill-header h3 {
+        filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+    }
+
     .loader-text-content {
         animation: fadeInUp 0.8s ease-out 0.6s backwards;
     }
@@ -2781,81 +3061,75 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-main">
-                    <div class="hero-header">
-                        <p class="hero-greeting">Hello, I'm</p>
-                        <h1 class="hero-name gradient-text">Khajana Raju Yandapalli</h1>
-                        <p class="hero-title">Lead DevOps Engineer</p>
+                    <div class="hero-header" style="animation: fadeInUp 0.8s ease-out; text-align: center;">
+                        <p class="hero-greeting" style="animation: fadeInUp 0.8s ease-out 0.1s backwards; letter-spacing: 1px;">Hello, I'm</p>
+                        <h1 class="hero-name gradient-text" style="animation: fadeInUp 0.8s ease-out 0.2s backwards; font-size: clamp(2rem, 8vw, 3.5rem); background: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6, #3b82f6); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-shift 4s ease infinite, fadeInUp 0.8s ease-out 0.2s backwards;">Khajana Raju Yandapalli</h1>
                     </div>
 
-                    <!-- Centered Profile Image -->
-                    <div style="text-align: center; margin: 20px 0;" class="profile-image-section">
-                        <div class="profile-image-container" style="display: inline-block; position: relative;">
-                            <img src="photo.png" alt="Khajana Raju Yandapalli" class="profile-image" loading="lazy" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fde047; box-shadow: 0 0 30px rgba(253, 224, 71, 0.3); filter: brightness(1.05) contrast(1.1) saturate(1.1);">
+                    <!-- Centered Profile Image with Enhanced Effects -->
+                    <div style="text-align: center; margin: 30px 0; position: relative;" class="profile-image-section">
+                        <div style="position: absolute; width: 220px; height: 220px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(6, 182, 212, 0.3), transparent 70%); border-radius: 50%; filter: blur(20px); animation: pulse-glow 3s ease-in-out infinite;"></div>
+                        <div style="position: absolute; width: 240px; height: 240px; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 2px solid rgba(253, 224, 71, 0.3); border-radius: 50%; animation: spin-slow 8s linear infinite;"></div>
+                        <div class="profile-image-container" style="display: inline-block; position: relative; z-index: 2; animation: float-gentle 4s ease-in-out infinite;">
+                            <img src="photo.png" alt="Khajana Raju Yandapalli" class="profile-image" loading="lazy" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #fde047; box-shadow: 0 0 40px rgba(253, 224, 71, 0.5), inset 0 0 20px rgba(6, 182, 212, 0.2); filter: brightness(1.05) contrast(1.1) saturate(1.1); transition: all 0.4s ease;" onmouseover="this.style.boxShadow='0 0 60px rgba(253, 224, 71, 0.7), inset 0 0 30px rgba(6, 182, 212, 0.3)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='0 0 40px rgba(253, 224, 71, 0.5), inset 0 0 20px rgba(6, 182, 212, 0.2)'; this.style.transform='scale(1)'">
                         </div>
                     </div>
 
-                    <!-- Profile Info Below Image -->
-                    <div style="text-align: center; margin-bottom: 15px;">
-                        <div class="profile-location" style="justify-content: center; margin-bottom: 10px;">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Hyderabad, India</span>
+                    <!-- Bio Section - ATS Optimized -->
+                    <div class="detail-card" style="max-width: 900px; margin: 0 auto 20px; text-align: left; line-height: 1.8; background: linear-gradient(135deg, rgba(30, 30, 50, 0.5), rgba(40, 30, 60, 0.5)); border: 2px solid; border-image: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6, #3b82f6) 1; border-radius: 16px; padding: 28px; backdrop-filter: blur(10px); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.1);">
+                        <h3 style="margin-bottom: 16px; color: #06b6d4; font-size: 22px; font-weight: 700;">Cloud & MLOps Architect</h3>
+                        <p style="margin-bottom: 20px; font-size: 15px; color: #e0e7ff; line-height: 1.8;">Bridging the gap between robust cloud infrastructure and the evolving frontier of Generative AI. I design, deploy, and scale high-velocity environments that empower teams to ship faster and smarter. By blending deep expertise in multi-cloud Kubernetes with modern AI-driven orchestration, I turn complex operational challenges into streamlined, future-proof ecosystems. My work centers on one core philosophy: <span style="color: #fde047; font-weight: 600;">building resilient, automated architectures that don't just support innovation—they accelerate it.</span></p>
+
+                        <div style="background: rgba(59, 130, 246, 0.1); border: 2px solid #06b6d4; padding: 16px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 15px rgba(6, 182, 212, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.1);">
+                            <h4 style="margin-bottom: 14px; color: #fde047; font-size: 16px; font-weight: 700;">🚀 Impact at a Glance</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px;">
+                                <div style="background: rgba(139, 92, 246, 0.15); padding: 12px; border-radius: 8px; border: 2px solid #8b5cf6; box-shadow: 0 0 12px rgba(139, 92, 246, 0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.3)'; this.style.transform='scale(1.03)'" onmouseout="this.style.boxShadow='0 0 12px rgba(139, 92, 246, 0.4)'; this.style.transform='scale(1)'">
+                                    <div style="color: #06b6d4; font-weight: 700;">⚡ Velocity</div>
+                                    <div style="color: #fde047; margin-top: 4px;">240x faster deployment (4h → 15m)</div>
+                                </div>
+                                <div style="background: rgba(34, 197, 94, 0.15); padding: 12px; border-radius: 8px; border: 2px solid #22c55e; box-shadow: 0 0 12px rgba(34, 197, 94, 0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 20px rgba(34, 197, 94, 0.6), 0 0 30px rgba(34, 197, 94, 0.3)'; this.style.transform='scale(1.03)'" onmouseout="this.style.boxShadow='0 0 12px rgba(34, 197, 94, 0.4)'; this.style.transform='scale(1)'">
+                                    <div style="color: #22c55e; font-weight: 700;">💰 Efficiency</div>
+                                    <div style="color: #fde047; margin-top: 4px;">70%+ cloud cost optimization</div>
+                                </div>
+                                <div style="background: rgba(249, 115, 22, 0.15); padding: 12px; border-radius: 8px; border: 2px solid #f97316; box-shadow: 0 0 12px rgba(249, 115, 22, 0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 20px rgba(249, 115, 22, 0.6), 0 0 30px rgba(249, 115, 22, 0.3)'; this.style.transform='scale(1.03)'" onmouseout="this.style.boxShadow='0 0 12px rgba(249, 115, 22, 0.4)'; this.style.transform='scale(1)'">
+                                    <div style="color: #f97316; font-weight: 700;">📈 Reliability</div>
+                                    <div style="color: #fde047; margin-top: 4px;">99.99%+ uptime via K8s</div>
+                                </div>
+                                <div style="background: rgba(168, 85, 247, 0.15); padding: 12px; border-radius: 8px; border: 2px solid #a855f7; box-shadow: 0 0 12px rgba(168, 85, 247, 0.4); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 0 20px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.3)'; this.style.transform='scale(1.03)'" onmouseout="this.style.boxShadow='0 0 12px rgba(168, 85, 247, 0.4)'; this.style.transform='scale(1)'">
+                                    <div style="color: #a855f7; font-weight: 700;">🧠 Intelligence</div>
+                                    <div style="color: #fde047; margin-top: 4px;">Scalable RAG & LLM Inference</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="social-links" style="justify-content: center;">
-                            <a href="mailto:rajusw804@gmail.com" class="social-link">
+
+                        <div style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid #a855f7; padding: 16px; border-radius: 8px;">
+                            <h4 style="margin-bottom: 14px; color: #fde047; font-size: 16px; font-weight: 700;">🛠 Core Expertise</h4>
+                            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                                <div style="color: #e0e7ff;"><span style="color: #06b6d4; font-weight: 700;">☁️ Cloud & Infrastructure:</span> <span style="color: #fde047;">AWS, Azure, GCP, Multi-Cloud Architecture, Terraform, Ansible</span></div>
+                                <div style="color: #e0e7ff;"><span style="color: #06b6d4; font-weight: 700;">☸️ Kubernetes Ecosystem:</span> <span style="color: #fde047;">EKS, AKS, GKE, Helm, Service Mesh, Microservices</span></div>
+                                <div style="color: #e0e7ff;"><span style="color: #06b6d4; font-weight: 700;">🤖 AI & MLOps:</span> <span style="color: #fde047;">Generative AI Architecture, RAG Pipelines, Vector Databases (Pinecone/Weaviate), Model Deployment</span></div>
+                                <div style="color: #e0e7ff;"><span style="color: #06b6d4; font-weight: 700;">🛡️ SRE & Observability:</span> <span style="color: #fde047;">Prometheus, Grafana, ELK Stack, Change Management (ITIL)</span></div>
+                                <div style="color: #e0e7ff;"><span style="color: #06b6d4; font-weight: 700;">⚙️ Automation:</span> <span style="color: #fde047;">Python, Bash, CI/CD Pipeline Engineering (Jenkins/GitHub Actions)</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons" style="margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <div style="display: flex; gap: 15px;">
+                            <a href="#contact" class="btn-sonar-primary">Let's Connect →</a>
+                            <a href="#" id="launchChatBtn" class="btn-sonar-primary">Launch Chat 🤖</a>
+                        </div>
+                        <div class="social-links" style="justify-content: center; gap: 20px; position: relative;">
+                            <a href="mailto:rajusw804@gmail.com" class="social-link" style="width: 56px; height: 56px; border: 2px solid #fde047; background: linear-gradient(135deg, rgba(253, 224, 71, 0.15), rgba(6, 182, 212, 0.08)); box-shadow: 0 0 20px rgba(253, 224, 71, 0.4); transition: all 0.3s ease; font-size: 24px;" onmouseover="this.style.boxShadow='0 0 40px rgba(253, 224, 71, 0.7), 0 0 60px rgba(59, 130, 246, 0.4)'; this.style.transform='scale(1.15) rotate(10deg)'; createSparkles(event)" onmouseout="this.style.boxShadow='0 0 20px rgba(253, 224, 71, 0.4)'; this.style.transform='scale(1) rotate(0deg)'">
                                 <i class="fas fa-envelope"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/khajanaraju/" target="_blank" class="social-link">
+                            <a href="https://www.linkedin.com/in/khajanaraju/" target="_blank" class="social-link" style="width: 56px; height: 56px; border: 2px solid #0066ff; background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(6, 182, 212, 0.08)); box-shadow: 0 0 20px rgba(0, 102, 255, 0.4); transition: all 0.3s ease; font-size: 24px;" onmouseover="this.style.boxShadow='0 0 40px rgba(0, 102, 255, 0.7), 0 0 60px rgba(6, 182, 212, 0.4)'; this.style.transform='scale(1.15) rotate(10deg)'; createSparkles(event)" onmouseout="this.style.boxShadow='0 0 20px rgba(0, 102, 255, 0.4)'; this.style.transform='scale(1) rotate(0deg)'">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://github.com/thisiskhajana/thisiskhajana.github.io" target="_blank" class="social-link">
+                            <a href="https://github.com/thisiskhajana/thisiskhajana.github.io" target="_blank" class="social-link" style="width: 56px; height: 56px; border: 2px solid #06b6d4; background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(34, 211, 238, 0.08)); box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); transition: all 0.3s ease; font-size: 24px;" onmouseover="this.style.boxShadow='0 0 40px rgba(6, 182, 212, 0.7), 0 0 60px rgba(6, 182, 212, 0.4)'; this.style.transform='scale(1.15) rotate(10deg)'; createSparkles(event)" onmouseout="this.style.boxShadow='0 0 20px rgba(6, 182, 212, 0.4)'; this.style.transform='scale(1) rotate(0deg)'">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
-                    </div>
-
-                    <!-- Bio Section -->
-                    <div class="detail-card" style="max-width: 700px; margin: 0 auto 20px; text-align: center; font-size: 16px;">
-                        <p style="margin-bottom: 10px;">DevOps architect transforming enterprise infrastructure through scalable cloud solutions on AWS. Expert in Kubernetes (EKS), CI/CD automation, Infrastructure as Code (Terraform), and SRE practices.</p>
-
-                        <p style="margin-bottom: 0;">Delivering 70%+ cost optimizations, reducing deployment cycles from hours to minutes, and maintaining 99.99%+ system uptime. AWS Certified Solutions Architect with expertise in real-time observability and building resilient, scalable systems.</p>
-                    </div>
-
-                    <!-- Expertise Grid -->
-                    <div class="expertise-grid" style="max-width: 800px; margin: 0 auto 20px;">
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-code-branch"></i>
-                            </div>
-                            <div class="expertise-content">
-                                <h5>DevOps</h5>
-                                <span class="expertise-level">Expert Level</span>
-                            </div>
-                        </div>
-
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <div class="expertise-content">
-                                <h5>Cloud Solutions</h5>
-                                <span class="expertise-level">Advanced Level</span>
-                            </div>
-                        </div>
-
-                        <div class="expertise-item">
-                            <div class="expertise-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="expertise-content">
-                                <h5>AI/LLM & Automation</h5>
-                                <span class="expertise-level">Expert Level</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-buttons" style="margin-top: 20px;">
-                        <a href="#contact" class="btn-sonar-primary">Let's Connect →</a>
-                        <a href="#" id="launchChatBtn" class="btn-sonar-primary">Launch Chat 🤖</a>
                     </div>
                 </div>
             </div>
@@ -2865,208 +3139,134 @@
     <section id="skills" class="sonar-section sonar-skills">
         <div class="container">            <div class="section-header">
                 <div class="section-badge">
-                    <span>Technical Stack</span>
+                    <span>Technical Expertise & Proficiency Matrix</span>
                 </div>
                 <p class="section-subtitle font-light">
-                    Core expertise in cloud platforms, DevOps tools & infrastructure automation
+                    Enterprise-grade expertise in DevOps, SRE, MLOps, Cloud Architecture, CI/CD Pipelines, Infrastructure as Code, Container Orchestration, and AI/LLM Engineering
                 </p>
             </div>
 
             <div class="skills-grid tools-skills">
-                <!-- 1. AWS -->
-                <div class="skill-card primary-skill">
+                <!-- 1. Multi-Cloud Platforms -->
+                <div class="skill-card primary-skill" style="border: 2px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon aws">
-                            <i class="fab fa-aws"></i>
+                        <div class="skill-icon aws" style="background: linear-gradient(135deg, #f59e0b, #fde047); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);">
+                            <i class="fas fa-cloud"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Amazon Web Services</h3>
-                            <p>Cloud architecture, migration, and cost optimization.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-server"></i> EC2</span>
-                            <span class="tech-tag"><i class="fas fa-database"></i> RDS</span>
-                            <span class="tech-tag"><i class="fas fa-hdd"></i> S3</span>
-                            <span class="tech-tag"><i class="fas fa-network-wired"></i> VPC</span>
-                            <span class="tech-tag"><i class="fas fa-code"></i> Lambda</span>
-                            <span class="tech-tag"><i class="fas fa-balance-scale"></i> ELB</span>
+                            <h3>☁️ Multi-Cloud Platforms</h3>
+                            <p>AWS, GCP, Azure - cloud architecture, migration, and cost optimization</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Docker & Kubernetes (Merged) -->
-                <div class="skill-card primary-skill">
+                <!-- 2. Container Orchestration & Microservices -->
+                <div class="skill-card primary-skill" style="border: 2px solid #06b6d4; background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(34, 211, 238, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon docker">
+                        <div class="skill-icon docker" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);">
                             <i class="fab fa-docker"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Docker & Kubernetes</h3>
-                            <p>Containerization, orchestration, and cluster management.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
-                            <span class="tech-tag"><i class="fas fa-dharmachakra"></i> Kubernetes</span>
-                            <span class="tech-tag"><i class="fas fa-helmet-safety"></i> Helm</span>
-                            <span class="tech-tag"><i class="fas fa-layer-group"></i> Multi-stage</span>
+                            <h3>☸️ Container Orchestration & Microservices</h3>
+                            <p>Docker containerization, Kubernetes cluster management, service mesh, high availability, self-healing infrastructure</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. CI/CD Tools -->
-                <div class="skill-card primary-skill">
+                <!-- 3. CI/CD & Release Engineering -->
+                <div class="skill-card primary-skill" style="border: 2px solid #ef4444; background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(248, 113, 113, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon jenkins">
+                        <div class="skill-icon jenkins" style="background: linear-gradient(135deg, #ef4444, #f87171); box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);">
                             <i class="fas fa-hammer"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>CI/CD & Automation</h3>
-                            <p>Pipeline orchestration and deployment automation.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-hammer"></i> Jenkins</span>
-                            <span class="tech-tag"><i class="fab fa-github"></i> GitHub Actions</span>
-                            <span class="tech-tag"><i class="fas fa-tasks"></i> Azure Pipelines</span>
+                            <h3>⚡ CI/CD Pipelines & Release Engineering</h3>
+                            <p>Continuous integration/deployment orchestration, automated testing, release management, zero-downtime deployments, GitOps</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. Infrastructure as Code -->
-                <div class="skill-card primary-skill">
+                <!-- 4. Infrastructure as Code & Configuration Management -->
+                <div class="skill-card primary-skill" style="border: 2px solid #8b5cf6; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon terraform">
+                        <div class="skill-icon terraform" style="background: linear-gradient(135deg, #8b5cf6, #a855f7); box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);">
                             <i class="fas fa-layer-group"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Infrastructure as Code</h3>
-                            <p>Automated infrastructure provisioning and management.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-cube"></i> Terraform</span>
-                            <span class="tech-tag"><i class="fas fa-cloud"></i> CloudFormation</span>
-                            <span class="tech-tag"><i class="fab fa-ansible"></i> Ansible</span>
-                            <span class="tech-tag"><i class="fas fa-cogs"></i> Puppet</span>
+                            <h3>🏗️ Infrastructure as Code & Configuration Management</h3>
+                            <p>Declarative infrastructure provisioning, state management, environment consistency, automated compliance, disaster recovery automation</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. Monitoring & Observability (Merged with Splunk) -->
-                <div class="skill-card primary-skill">
+                <!-- 5. Observability & SRE Monitoring -->
+                <div class="skill-card primary-skill" style="border: 2px solid #3b82f6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(96, 165, 250, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon monitoring">
+                        <div class="skill-icon monitoring" style="background: linear-gradient(135deg, #3b82f6, #60a5fa); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Monitoring & Observability</h3>
-                            <p>Comprehensive logging, metrics, and alerting systems.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-fire"></i> Prometheus</span>
-                            <span class="tech-tag"><i class="fas fa-chart-area"></i> Grafana</span>
-                            <span class="tech-tag"><i class="fas fa-search"></i> ELK/Splunk</span>
-                            <span class="tech-tag"><i class="fas fa-bell"></i> AlertManager</span>
+                            <h3>📊 Observability, Monitoring & SRE</h3>
+                            <p>Three pillars of observability (logs, metrics, traces), SLO/SLI implementation, incident response, reliability engineering, error budgets</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 6. Version Control & Git -->
-                <div class="skill-card">
+                <!-- 6. DevOps Pipeline & Deployment Automation -->
+                <div class="skill-card primary-skill" style="border: 2px solid #ec4899; background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(244, 114, 182, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon github">
-                            <i class="fab fa-github"></i>
+                        <div class="skill-icon jenkins" style="background: linear-gradient(135deg, #ec4899, #f472b6); box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);">
+                            <i class="fas fa-hammer"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Version Control</h3>
-                            <p>Git workflows and collaborative development.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
-                            <span class="tech-tag"><i class="fab fa-github"></i> GitHub</span>
-                            <span class="tech-tag"><i class="fab fa-gitlab"></i> GitLab</span>
-                            <span class="tech-tag"><i class="fas fa-code-branch"></i> Branching</span>
+                            <h3>🚀 DevOps Pipeline & Deployment Automation</h3>
+                            <p>Jenkins automation, deployment orchestration, build pipeline optimization, artifact management, automated rollbacks, canary deployments</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 7. Security & Compliance -->
-                <div class="skill-card primary-skill">
+                <!-- 7. Security, Compliance & IAM -->
+                <div class="skill-card primary-skill" style="border: 2px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(52, 211, 153, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon security">
+                        <div class="skill-icon security" style="background: linear-gradient(135deg, #10b981, #34d399); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Security & Compliance</h3>
-                            <p>Enterprise security and vulnerability management.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-lock"></i> OWASP</span>
-                            <span class="tech-tag"><i class="fas fa-bug"></i> Snyk</span>
-                            <span class="tech-tag"><i class="fas fa-vault"></i> Vault</span>
-                            <span class="tech-tag"><i class="fas fa-certificate"></i> SSL/TLS</span>
-                            <span class="tech-tag"><i class="fas fa-id-card"></i> OAuth/SAML</span>
+                            <h3>🛡️ Security, Compliance & Identity Management</h3>
+                            <p>Application security, infrastructure hardening, identity & access management, vulnerability management, compliance frameworks</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 8. Automation & Scripting -->
-                <div class="skill-card primary-skill">
+                <!-- 8. Programming & DevOps Scripting -->
+                <div class="skill-card primary-skill" style="border: 2px solid #14b8a6; background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(45, 212, 191, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon automation">
+                        <div class="skill-icon automation" style="background: linear-gradient(135deg, #14b8a6, #2dd4bf); box-shadow: 0 8px 20px rgba(20, 184, 166, 0.4);">
                             <i class="fas fa-robot"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Scripting & Languages</h3>
-                            <p>Infrastructure automation and infrastructure orchestration.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-terminal"></i> PowerShell</span>
-                            <span class="tech-tag"><i class="fas fa-code"></i> Bash</span>
-                            <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                            <span class="tech-tag"><i class="fas fa-exchange-alt"></i> REST APIs</span>
+                            <h3>⚙️ Programming Languages & Automation</h3>
+                            <p>Infrastructure automation, custom tooling, operational scripting, API integration, toolchain development</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 9. Database Technologies -->
-                <div class="skill-card primary-skill">
+                <!-- 9. AI/LLM & MLOps -->
+                <div class="skill-card primary-skill" style="border: 2px solid #d946ef; background: linear-gradient(135deg, rgba(217, 70, 239, 0.08), rgba(232, 121, 249, 0.04));">
                     <div class="skill-header">
-                        <div class="skill-icon database">
-                            <i class="fas fa-database"></i>
+                        <div class="skill-icon automation" style="background: linear-gradient(135deg, #d946ef, #e879f9); box-shadow: 0 8px 20px rgba(217, 70, 239, 0.4);">
+                            <i class="fas fa-brain"></i>
                         </div>
                         <div class="skill-info">
-                            <h3>Database Technologies</h3>
-                            <p>Data management and database optimization.</p>
-                        </div>
-                    </div>
-                    <div class="skill-features">
-                        <div class="tech-tags">
-                            <span class="tech-tag"><i class="fas fa-elephant"></i> PostgreSQL</span>
-                            <span class="tech-tag"><i class="fas fa-server"></i> SQL Server</span>
-                            <span class="tech-tag"><i class="fas fa-leaf"></i> MongoDB</span>
-                            <span class="tech-tag"><i class="fas fa-memory"></i> Redis</span>
+                            <h3>🧠 AI/LLM & MLOps</h3>
+                            <p>Generative AI, RAG pipelines, and machine learning operations</p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section>    <!-- Skills Section -->
+    </section>    <!-- Skills Section - Enterprise Technical Stack -->
 
     <section id="experience" class="sonar-section">
         <div class="container">
@@ -3086,41 +3286,49 @@
             
             <div class="experience-content">
                 <!-- FactSet -->
-                <div class="experience-card">
+                <div class="experience-card" style="border: 2px solid #0099ff; background: linear-gradient(135deg, rgba(0, 153, 255, 0.08), rgba(34, 211, 238, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.2s;">
                     <div class="experience-header">
                         <div class="company-icon">
-                            <div class="company-initials" style="background: linear-gradient(135deg, #0066ff, #0099ff); font-size: 24px; font-weight: bold; color: white;">FS</div>
+                            <div class="company-initials" style="background: linear-gradient(135deg, #0066ff, #0099ff); font-size: 24px; font-weight: bold; color: white; box-shadow: 0 8px 24px rgba(0, 153, 255, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1) rotate(5deg)'; this.style.boxShadow='0 12px 32px rgba(0, 153, 255, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(0, 153, 255, 0.4)'">FS</div>
                         </div>
                         <div class="experience-info">
-                            <h3>Lead DevOps Engineer</h3>
+                            <h3 style="background: linear-gradient(135deg, #fde047, #0099ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Lead DevOps Engineer</h3>
                             <p class="company-name">FactSet Systems India Pvt Ltd</p>
-                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px; margin-top: 4px;">Jun 2019 - Present</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px; margin-top: 4px;"><i class="fas fa-calendar-alt" style="margin-right: 6px; color: #0099ff;"></i>Jun 2019 - Present</p>
                         </div>
                     </div>
-
-                    <div class="experience-description">
+                    <div style="display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap;">
+                        <span style="background: rgba(0, 153, 255, 0.2); border: 1px solid #0099ff; color: #22d3ee; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Kubernetes</span>
+                        <span style="background: rgba(0, 153, 255, 0.2); border: 1px solid #0099ff; color: #22d3ee; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AWS EKS</span>
+                        <span style="background: rgba(0, 153, 255, 0.2); border: 1px solid #0099ff; color: #22d3ee; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Terraform</span>
+                        <span style="background: rgba(0, 153, 255, 0.2); border: 1px solid #0099ff; color: #22d3ee; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">SRE</span>
+                    </div>
+                    <div class="experience-description" style="padding: 14px 0; border-top: 1px solid rgba(0, 153, 255, 0.2);">
                         <p>Lead DevOps initiatives for enterprise applications. Responsible for orchestrating Kubernetes (EKS) environments, optimizing database performance, implementing comprehensive observability stacks, and managing multiple environments (dev, stage, QA, Pre-prod, prod). Expertise in infrastructure automation with Terraform, CI/CD pipeline optimization using Jenkins, and implementing SLOs/SLIs for critical services.</p>
                     </div>
-
                 </div>
 
                 <!-- Futurism Technologies -->
-                <div class="experience-card">
+                <div class="experience-card" style="border: 2px solid #9d5bff; background: linear-gradient(135deg, rgba(157, 91, 255, 0.08), rgba(168, 85, 247, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.4s;">
                     <div class="experience-header">
                         <div class="company-icon">
-                            <div class="company-initials" style="background: linear-gradient(135deg, #7b3ff2, #9d5bff); font-size: 24px; font-weight: bold; color: white;">FT</div>
+                            <div class="company-initials" style="background: linear-gradient(135deg, #7b3ff2, #9d5bff); font-size: 24px; font-weight: bold; color: white; box-shadow: 0 8px 24px rgba(157, 91, 255, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.1) rotate(5deg)'; this.style.boxShadow='0 12px 32px rgba(157, 91, 255, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(157, 91, 255, 0.4)'">FT</div>
                         </div>
                         <div class="experience-info">
-                            <h3>DevOps Engineer</h3>
+                            <h3 style="background: linear-gradient(135deg, #fde047, #9d5bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">DevOps Engineer</h3>
                             <p class="company-name">Futurism Technologies Pvt Ltd</p>
-                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px; margin-top: 4px;">Nov 2018 - Jun 2019</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 13px; margin-top: 4px;"><i class="fas fa-calendar-alt" style="margin-right: 6px; color: #9d5bff;"></i>Nov 2018 - Jun 2019</p>
                         </div>
                     </div>
-
-                    <div class="experience-description">
+                    <div style="display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap;">
+                        <span style="background: rgba(157, 91, 255, 0.2); border: 1px solid #9d5bff; color: #e879f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AWS</span>
+                        <span style="background: rgba(157, 91, 255, 0.2); border: 1px solid #9d5bff; color: #e879f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Jenkins</span>
+                        <span style="background: rgba(157, 91, 255, 0.2); border: 1px solid #9d5bff; color: #e879f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Docker</span>
+                        <span style="background: rgba(157, 91, 255, 0.2); border: 1px solid #9d5bff; color: #e879f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Monitoring</span>
+                    </div>
+                    <div class="experience-description" style="padding: 14px 0; border-top: 1px solid rgba(157, 91, 255, 0.2);">
                         <p>Implemented AWS infrastructure solutions, configured and maintained Jenkins CI/CD pipelines, managed Docker containerization, and set up comprehensive monitoring solutions. Worked on cloud infrastructure provisioning, deployment automation, and infrastructure optimization for enterprise clients.</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -3144,26 +3352,26 @@
 
             <div class="certifications-grid">
                 <!-- AWS Certified Solutions Architect – Associate -->
-                <div class="certification-card">
+                <div class="certification-card" style="border: 2px solid #FF9900; background: linear-gradient(135deg, rgba(255, 153, 0, 0.08), rgba(251, 146, 60, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.1s;">
                     <div class="cert-header">
-                        <div class="cert-icon aws" style="background: linear-gradient(135deg, #FF9900, #FF9900); font-size: 28px;">
+                        <div class="cert-icon aws" style="background: linear-gradient(135deg, #FF9900, #FB923C); font-size: 28px; box-shadow: 0 8px 24px rgba(255, 153, 0, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.15) rotate(10deg)'; this.style.boxShadow='0 12px 32px rgba(255, 153, 0, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(255, 153, 0, 0.4)'">
                             <i class="fab fa-aws"></i>
                         </div>
-                        <div class="cert-badge verified">
+                        <div class="cert-badge verified" style="background: rgba(34, 197, 94, 0.2); border: 1px solid #22c55e; color: #22c55e;">
                             <i class="fas fa-check-circle"></i>
                             <span>Verified</span>
                         </div>
                     </div>
                     <div class="cert-content">
-                        <h3>AWS Certified Solutions Architect – Associate</h3>
-                        <p class="cert-issuer">Amazon Web Services (AWS)</p>
-                        <div class="cert-details">
-                            <span class="cert-date">
-                                <i class="fas fa-calendar"></i>
+                        <h3 style="background: linear-gradient(135deg, #fde047, #FF9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AWS Certified Solutions Architect – Associate</h3>
+                        <p class="cert-issuer" style="color: #FB923C;">Amazon Web Services (AWS)</p>
+                        <div class="cert-details" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 153, 0, 0.2);">
+                            <span class="cert-date" style="color: rgba(255, 255, 255, 0.8);">
+                                <i class="fas fa-calendar" style="color: #FF9900; margin-right: 6px;"></i>
                                 Issued: Aug 2020
                             </span>
-                            <span class="cert-expiry">
-                                <i class="fas fa-calendar-times"></i>
+                            <span class="cert-expiry" style="color: rgba(255, 255, 255, 0.8); display: block; margin-top: 6px;">
+                                <i class="fas fa-calendar-times" style="color: #FF9900; margin-right: 6px;"></i>
                                 Expires: Aug 2023
                             </span>
                         </div>
@@ -3171,26 +3379,26 @@
                 </div>
 
                 <!-- Claude 101 Certificate -->
-                <div class="certification-card">
+                <div class="certification-card" style="border: 2px solid #8b5cf6; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.2s;">
                     <div class="cert-header">
-                        <div class="cert-icon anthropic" style="background: linear-gradient(135deg, #8b5cf6, #6366f1); font-size: 28px;">
+                        <div class="cert-icon anthropic" style="background: linear-gradient(135deg, #8b5cf6, #a855f7); font-size: 28px; box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.15) rotate(10deg)'; this.style.boxShadow='0 12px 32px rgba(139, 92, 246, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(139, 92, 246, 0.4)'">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <div class="cert-badge verified">
+                        <div class="cert-badge verified" style="background: rgba(34, 197, 94, 0.2); border: 1px solid #22c55e; color: #22c55e;">
                             <i class="fas fa-check-circle"></i>
                             <span>Verified</span>
                         </div>
                     </div>
                     <div class="cert-content">
-                        <h3>Certificate of Completion: Claude 101</h3>
-                        <p class="cert-issuer">Anthropic</p>
-                        <div class="cert-details">
-                            <span class="cert-date">
-                                <i class="fas fa-calendar"></i>
+                        <h3 style="background: linear-gradient(135deg, #fde047, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Certificate of Completion: Claude 101</h3>
+                        <p class="cert-issuer" style="color: #a855f7;">Anthropic</p>
+                        <div class="cert-details" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(139, 92, 246, 0.2);">
+                            <span class="cert-date" style="color: rgba(255, 255, 255, 0.8);">
+                                <i class="fas fa-calendar" style="color: #a855f7; margin-right: 6px;"></i>
                                 Issued: Jun 2026
                             </span>
-                            <span class="cert-id">
-                                <i class="fas fa-key"></i>
+                            <span class="cert-id" style="color: rgba(255, 255, 255, 0.8); display: block; margin-top: 6px;">
+                                <i class="fas fa-key" style="color: #a855f7; margin-right: 6px;"></i>
                                 Credential ID: fdbteb3czb2r
                             </span>
                         </div>
@@ -3198,26 +3406,26 @@
                 </div>
 
                 <!-- Introduction to Model Context Protocol -->
-                <div class="certification-card">
+                <div class="certification-card" style="border: 2px solid #06b6d4; background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(34, 211, 238, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.3s;">
                     <div class="cert-header">
-                        <div class="cert-icon anthropic" style="background: linear-gradient(135deg, #8b5cf6, #6366f1); font-size: 28px;">
+                        <div class="cert-icon anthropic" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); font-size: 28px; box-shadow: 0 8px 24px rgba(6, 182, 212, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.15) rotate(10deg)'; this.style.boxShadow='0 12px 32px rgba(6, 182, 212, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(6, 182, 212, 0.4)'">
                             <i class="fas fa-link"></i>
                         </div>
-                        <div class="cert-badge verified">
+                        <div class="cert-badge verified" style="background: rgba(34, 197, 94, 0.2); border: 1px solid #22c55e; color: #22c55e;">
                             <i class="fas fa-check-circle"></i>
                             <span>Verified</span>
                         </div>
                     </div>
                     <div class="cert-content">
-                        <h3>Introduction to Model Context Protocol</h3>
-                        <p class="cert-issuer">Anthropic</p>
-                        <div class="cert-details">
-                            <span class="cert-date">
-                                <i class="fas fa-calendar"></i>
+                        <h3 style="background: linear-gradient(135deg, #fde047, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Introduction to Model Context Protocol</h3>
+                        <p class="cert-issuer" style="color: #06b6d4;">Anthropic</p>
+                        <div class="cert-details" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+                            <span class="cert-date" style="color: rgba(255, 255, 255, 0.8);">
+                                <i class="fas fa-calendar" style="color: #06b6d4; margin-right: 6px;"></i>
                                 Issued: Jun 2026
                             </span>
-                            <span class="cert-id">
-                                <i class="fas fa-key"></i>
+                            <span class="cert-id" style="color: rgba(255, 255, 255, 0.8); display: block; margin-top: 6px;">
+                                <i class="fas fa-key" style="color: #06b6d4; margin-right: 6px;"></i>
                                 Credential ID: rgiddadbrati
                             </span>
                         </div>
@@ -3240,33 +3448,36 @@
             </div>
             
             <div class="education-content">
-                <div class="education-card">
-                    <div class="education-icon">
+                <div class="education-card" style="border: 2px solid #8b5cf6; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.1s;">
+                    <div class="education-icon" style="background: linear-gradient(135deg, #8b5cf6, #a855f7); box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2) rotate(12deg)'; this.style.boxShadow='0 12px 32px rgba(139, 92, 246, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(139, 92, 246, 0.4)'">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="education-info">
-                        <h3>M. Tech in Computer Science Engineering</h3>
-                        <p style="color: rgba(255, 255, 255, 0.75); font-size: 13px; margin-top: 6px;"><i class="fas fa-calendar"></i> 2019 | Sarada Engineering College, JNTUK</p>
+                        <h3 style="background: linear-gradient(135deg, #fde047, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">M. Tech in Computer Science Engineering</h3>
+                        <p style="color: #a855f7; font-weight: 600; font-size: 14px;"><i class="fas fa-calendar" style="margin-right: 6px;"></i>2019</p>
+                        <p style="color: rgba(255, 255, 255, 0.75); font-size: 13px; margin-top: 6px;"><i class="fas fa-building" style="margin-right: 6px; color: #a855f7;"></i>Sarada Engineering College, JNTUK</p>
                     </div>
                 </div>
 
-                <div class="education-card">
-                    <div class="education-icon">
+                <div class="education-card" style="border: 2px solid #06b6d4; background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(34, 211, 238, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.2s;">
+                    <div class="education-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee); box-shadow: 0 8px 24px rgba(6, 182, 212, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2) rotate(12deg)'; this.style.boxShadow='0 12px 32px rgba(6, 182, 212, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(6, 182, 212, 0.4)'">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="education-info">
-                        <h3>B. Tech in Computer Science Engineering</h3>
-                        <p style="color: rgba(255, 255, 255, 0.75); font-size: 13px; margin-top: 6px;"><i class="fas fa-calendar"></i> 2016 | Sarada Engineering College, JNTUK</p>
+                        <h3 style="background: linear-gradient(135deg, #fde047, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">B. Tech in Computer Science Engineering</h3>
+                        <p style="color: #06b6d4; font-weight: 600; font-size: 14px;"><i class="fas fa-calendar" style="margin-right: 6px;"></i>2016</p>
+                        <p style="color: rgba(255, 255, 255, 0.75); font-size: 13px; margin-top: 6px;"><i class="fas fa-building" style="margin-right: 6px; color: #06b6d4;"></i>Sarada Engineering College, JNTUK</p>
                     </div>
                 </div>
 
-                <div class="education-card">
-                    <div class="education-icon">
+                <div class="education-card" style="border: 2px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(52, 211, 153, 0.04)); animation: blast-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; animation-delay: 0.3s;">
+                    <div class="education-icon" style="background: linear-gradient(135deg, #10b981, #34d399); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.2) rotate(12deg)'; this.style.boxShadow='0 12px 32px rgba(16, 185, 129, 0.6)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.boxShadow='0 8px 24px rgba(16, 185, 129, 0.4)'">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="education-info">
-                        <h3>Diploma in Computer Science Engineering</h3>
-                        <p style="color: rgba(255, 255, 255, 0.75); font-size: 13px; margin-top: 6px;"><i class="fas fa-calendar"></i> 2011 | Government Polytechnic, SBTET</p>
+                        <h3 style="background: linear-gradient(135deg, #fde047, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;">Diploma in Computer Science Engineering</h3>
+                        <p style="color: #10b981; font-weight: 600; font-size: 14px;"><i class="fas fa-calendar" style="margin-right: 6px;"></i>2011</p>
+                        <p style="color: rgba(255, 255, 255, 0.75); font-size: 13px; margin-top: 6px;"><i class="fas fa-building" style="margin-right: 6px; color: #10b981;"></i>Government Polytechnic, SBTET</p>
                     </div>
                 </div>
             </div>
@@ -3712,6 +3923,33 @@
     </div>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="req/js/material-3.js"></script>
     <script src="req/js/chatbot-fix.js"></script>
+
+    <!-- Sparkle Effect Script -->
+    <script>
+    function createSparkles(event) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        for (let i = 0; i < 12; i++) {
+            const angle = (Math.PI * 2 * i) / 12;
+            const distance = 60 + Math.random() * 40;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = centerX + 'px';
+            sparkle.style.top = centerY + 'px';
+            sparkle.style.setProperty('--tx', tx + 'px');
+            sparkle.style.setProperty('--ty', ty + 'px');
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 800);
+        }
+    }
+    </script>
 
     <!-- Visitor Counter Script -->
     <script>
