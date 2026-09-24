@@ -17,13 +17,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="preload" href="./req/fonts/BerkeleyMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./req/fonts/BerkeleyMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./req/fonts/FKGrotesk-Light.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./req/fonts/FKGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./req/fonts/FKGroteskNeue-Light.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./req/fonts/FKGroteskNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./req/fonts/FKGroteskNeue-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%233b82f6' width='192' height='192'/><text x='50%' y='50%' font-family='system-ui,-apple-system,sans-serif' font-size='90' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>KR</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%233b82f6' width='192' height='192'/><text x='50%' y='50%' font-family='system-ui,-apple-system,sans-serif' font-size='90' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>KR</text></svg>">
 
@@ -36,23 +29,18 @@
       gtag('config', 'G-MNQEK8H7QV');
     </script>
 
-    <script src="req/js/styles.js"></script>
     <style>
-        html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; background-color: #0b0f19; color: #f8fafc; }
-        body { font-family: "FK Grotesk Neue Regular", "Inter", system-ui, -apple-system, sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: "FK Grotesk Neue Medium", "Inter", system-ui, -apple-system, sans-serif; }
-        @media (max-width: 768px) { html { font-size: 16px; } }
+        html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; background-color: #0b0f19; color: #f8fafc; scroll-behavior: smooth; }
+        body { font-family: "Inter", system-ui, -apple-system, sans-serif; }
         
         :root { 
             --accent-blue: #3b82f6; 
             --accent-cyan: #06b6d4;
             --accent-purple: #8b5cf6;
             --bg-dark: #0b0f19;
-            --card-bg: rgba(30, 41, 59, 0.6);
-            --border-color: rgba(59, 130, 246, 0.25);
+            --card-bg: rgba(30, 41, 59, 0.55);
+            --border-color: rgba(59, 130, 246, 0.2);
         }
-
-        body.sonar-body { font-family: var(--font-family); }
         
         /* Navigation */
         nav.sonar-nav {
@@ -167,7 +155,7 @@
             transform: scale(1.04);
         }
 
-        /* Cards & Containers */
+        /* Sections */
         .sonar-section {
             padding: 70px 0;
         }
@@ -192,7 +180,7 @@
         }
 
         .section-title {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 800;
             color: #fff;
             margin-bottom: 15px;
@@ -212,32 +200,31 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Modern Glass Cards */
+        /* Glass Cards & Grids */
         .glass-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
+            padding: 28px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
             height: 100%;
         }
 
         .glass-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: var(--accent-cyan);
-            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.15);
         }
 
-        /* Grid Layouts */
-        .skills-grid, .experience-grid, .certifications-grid, .projects-grid, .blog-grid {
+        .skills-grid, .certifications-grid, .projects-grid {
             display: grid;
             gap: 24px;
         }
 
-        .skills-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .projects-grid, .blog-grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+        .skills-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .certifications-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .projects-grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
 
         /* Buttons */
         .btn-sonar-primary {
@@ -296,7 +283,7 @@
         }
     </style>
 </head>
-<body class="sonar-body">
+<body>
 
     <!-- Navigation Bar -->
     <nav class="sonar-nav">
@@ -382,9 +369,9 @@
                 <div class="glass-card">
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <div class="fs-3 text-info"><i class="fas fa-cloud"></i></div>
-                        <h3 class="h5 text-white mb-0">Multi-Cloud Architecture</h3>
+                        <h3 class="h5 text-white mb-0">Multi-Cloud Platforms</h3>
                     </div>
-                    <p class="text-secondary small mb-0">Architecting and scaling robust cloud infrastructure across AWS, Azure, and Google Cloud Platform (GCP) with automated disaster recovery.</p>
+                    <p class="text-secondary small mb-0">Architecting robust multi-cloud environments across AWS, Azure, and GCP with automated failover and cost governance.</p>
                 </div>
 
                 <div class="glass-card">
@@ -392,7 +379,7 @@
                         <div class="fs-3 text-warning"><i class="fab fa-docker"></i></div>
                         <h3 class="h5 text-white mb-0">Container Orchestration</h3>
                     </div>
-                    <p class="text-secondary small mb-0">Managing production-grade Kubernetes clusters (EKS, AKS, GKE), Helm chart templating, and service mesh routing for microservices.</p>
+                    <p class="text-secondary small mb-0">Managing production-grade Kubernetes (EKS, AKS, GKE), Helm chart automation, and resilient microservice meshes.</p>
                 </div>
 
                 <div class="glass-card">
@@ -400,15 +387,15 @@
                         <div class="fs-3 text-danger"><i class="fas fa-layer-group"></i></div>
                         <h3 class="h5 text-white mb-0">Infrastructure as Code</h3>
                     </div>
-                    <p class="text-secondary small mb-0">Declarative resource provisioning and state management using Terraform, OpenTofu, Ansible, and CloudFormation.</p>
+                    <p class="text-secondary small mb-0">Declarative resource provisioning, configuration drift detection, and state management via Terraform and Ansible.</p>
                 </div>
 
                 <div class="glass-card">
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <div class="fs-3 text-success"><i class="fas fa-hammer"></i></div>
-                        <h3 class="h5 text-white mb-0">CI/CD & Release Engineering</h3>
+                        <h3 class="h5 text-white mb-0">CI/CD & Automation</h3>
                     </div>
-                    <p class="text-secondary small mb-0">Designing zero-downtime deployment pipelines using Jenkins, GitHub Actions, GitLab CI, and ArgoCD with automated rollback strategies.</p>
+                    <p class="text-secondary small mb-0">Building zero-downtime release pipelines utilizing Jenkins, GitHub Actions, and GitOps delivery frameworks.</p>
                 </div>
 
                 <div class="glass-card">
@@ -416,15 +403,15 @@
                         <div class="fs-3 text-primary"><i class="fas fa-chart-line"></i></div>
                         <h3 class="h5 text-white mb-0">Observability & SRE</h3>
                     </div>
-                    <p class="text-secondary small mb-0">Implementing comprehensive monitoring stacks with Prometheus, Grafana, Datadog, Splunk, and OpenTelemetry aligned with strict SLOs.</p>
+                    <p class="text-secondary small mb-0">Establishing end-to-end monitoring, logging, and tracing frameworks with Prometheus, Grafana, Datadog, and Splunk.</p>
                 </div>
 
                 <div class="glass-card">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="fs-3 text-purple" style="color: var(--accent-purple);"><i class="fas fa-brain"></i></div>
+                        <div class="fs-3" style="color: #d946ef;"><i class="fas fa-brain"></i></div>
                         <h3 class="h5 text-white mb-0">AI/LLM & MLOps</h3>
                     </div>
-                    <p class="text-secondary small mb-0">Integrating generative AI workflows, RAG pipeline architectures, vector databases, and scalable model inference infrastructure.</p>
+                    <p class="text-secondary small mb-0">Deploying scalable inference infrastructure, RAG pipelines, and automated guardrail engines for generative AI models.</p>
                 </div>
             </div>
         </div>
@@ -489,42 +476,87 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">Accreditations</div>
-                <h2 class="section-title">Certifications & Education</h2>
-                <p class="section-subtitle">Verified professional credentials and formal academic background in Computer Science.</p>
+                <h2 class="section-title">Certifications & Credentials</h2>
+                <p class="section-subtitle">Verified professional credentials, industry certifications, and technical accreditations.</p>
             </div>
 
             <div class="certifications-grid mb-5">
-                <div class="glass-card">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="fs-2 text-warning"><i class="fab fa-aws"></i></div>
-                        <div>
-                            <h3 class="h6 text-white mb-1">AWS Certified Solutions Architect – Associate</h3>
-                            <p class="text-secondary small mb-0">Amazon Web Services</p>
+                <div class="glass-card d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="fs-2 text-warning"><i class="fab fa-aws"></i></div>
+                            <div>
+                                <h3 class="h6 text-white mb-1">AWS Certified Solutions Architect – Associate</h3>
+                                <p class="text-secondary small mb-0">Amazon Web Services</p>
+                            </div>
                         </div>
                     </div>
-                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25"><i class="fas fa-check-circle me-1"></i> Verified Credential</span>
+                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 align-self-start mt-3"><i class="fas fa-check-circle me-1"></i> Verified Credential</span>
                 </div>
 
-                <div class="glass-card">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="fs-2 text-purple" style="color: var(--accent-purple);"><i class="fas fa-brain"></i></div>
-                        <div>
-                            <h3 class="h6 text-white mb-1">Claude 101 Completion Certificate</h3>
-                            <p class="text-secondary small mb-0">Anthropic</p>
+                <div class="glass-card d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="fs-2 text-danger"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <h3 class="h6 text-white mb-1">Academy Accreditation - AI Agent Fundamentals</h3>
+                                <p class="text-secondary small mb-0">Databricks Academy</p>
+                            </div>
                         </div>
                     </div>
-                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25"><i class="fas fa-check-circle me-1"></i> Credential ID: fdbteb3czb2r</span>
+                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 align-self-start mt-3"><i class="fas fa-check-circle me-1"></i> Verified (Aug 2026)</span>
                 </div>
 
-                <div class="glass-card">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="fs-2 text-info"><i class="fas fa-link"></i></div>
-                        <div>
-                            <h3 class="h6 text-white mb-1">Model Context Protocol Introduction</h3>
-                            <p class="text-secondary small mb-0">Anthropic</p>
+                <div class="glass-card d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="fs-2 text-danger"><i class="fas fa-database"></i></div>
+                            <div>
+                                <h3 class="h6 text-white mb-1">Redis Associate Cloud Operator</h3>
+                                <p class="text-secondary small mb-0">Redis Certification</p>
+                            </div>
                         </div>
                     </div>
-                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25"><i class="fas fa-check-circle me-1"></i> Credential ID: rgiddadbrati</span>
+                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 align-self-start mt-3"><i class="fas fa-check-circle me-1"></i> Verified (Aug 2026)</span>
+                </div>
+
+                <div class="glass-card d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="fs-2 text-info"><i class="fas fa-chart-bar"></i></div>
+                            <div>
+                                <h3 class="h6 text-white mb-1">Coralogix DataPrime Advanced User</h3>
+                                <p class="text-secondary small mb-0">Coralogix Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 align-self-start mt-3"><i class="fas fa-check-circle me-1"></i> Verified (Aug 2026)</span>
+                </div>
+
+                <div class="glass-card d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="fs-2" style="color: #a855f7;"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <h3 class="h6 text-white mb-1">Claude 101 Completion Certificate</h3>
+                                <p class="text-secondary small mb-0">Anthropic</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 align-self-start mt-3"><i class="fas fa-check-circle me-1"></i> Credential ID: fdbteb3czb2r</span>
+                </div>
+
+                <div class="glass-card d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="fs-2 text-info"><i class="fas fa-link"></i></div>
+                            <div>
+                                <h3 class="h6 text-white mb-1">Model Context Protocol Introduction</h3>
+                                <p class="text-secondary small mb-0">Anthropic</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 align-self-start mt-3"><i class="fas fa-check-circle me-1"></i> Credential ID: rgiddadbrati</span>
                 </div>
             </div>
         </div>
